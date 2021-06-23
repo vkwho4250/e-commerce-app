@@ -1,0 +1,116 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 6.25%;
+}
+
+body {
+  font: 15rem "Manrope", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  padding: 30rem;
+  letter-spacing: 2rem;
+  font-weight: 500;
+}
+
+input {
+  border: 2rem solid #F1F1F1;
+  border-radius: 5rem;
+  padding: 15rem 20rem;
+  font: inherit;
+  outline: none;
+  font-weight: 600;
+  caret-color: #D87D4A;
+}
+input:focus {
+  border: 2rem solid #D87D4A;
+}
+
+input[type=radio] {
+  background: #D87D4A;
+  width: 20rem;
+  height: 20rem;
+  margin: 10rem;
+}
+
+button {
+  border: none;
+  outline: none;
+  font: inherit;
+  text-transform: uppercase;
+  padding: 15rem 25rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.orange-btn {
+  background: #D87D4A;
+  color: white;
+}
+.orange-btn:hover {
+  background: #FBAF85;
+}
+
+.white-btn {
+  background: white;
+  color: black;
+  border: 1rem solid black;
+}
+.white-btn:hover {
+  background: black;
+  color: white;
+}
+
+.subtitle, h6, h5, h4, h3, h2, h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 40rem;
+}
+
+h2 {
+  font-size: 28rem;
+}
+
+h3 {
+  font-size: 24rem;
+}
+
+h4 {
+  font-size: 18rem;
+}
+
+h5 {
+  font-size: 18rem;
+}
+
+h6 {
+  font-size: 14rem;
+}
+
+.overline {
+  font-size: 14rem;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 13rem;
+}
+
+#nav-bar {
+  justify-content: space-between;
+  align: center;
+  flex-direction: row;
+  height: 5vh;
+  background: #101010;
+}

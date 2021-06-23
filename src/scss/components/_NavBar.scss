@@ -1,0 +1,7 @@
+@use "../styles" as *;
+
+#nav-bar {
+  @include flex-container(space-between, center);
+  height: 5vh;
+  background: $dark-gray;
+}

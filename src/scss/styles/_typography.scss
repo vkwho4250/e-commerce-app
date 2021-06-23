@@ -1,0 +1,47 @@
+
+
+%bold-caps {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+h1 {
+  @extend %bold-caps;
+  font-size: 40rem;
+}
+
+
+h2 {
+  @extend %bold-caps;
+  font-size: 28rem;
+}
+
+h3 {
+  @extend %bold-caps;
+  font-size: 24rem;
+}
+
+h4 {
+  @extend %bold-caps;
+  font-size: 18rem;
+}
+
+h5 {
+  @extend %bold-caps;
+  font-size: 18rem;
+}
+
+h6 {
+  @extend %bold-caps;
+  font-size: 14rem;
+}
+
+.overline {
+  font-size: 14rem;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  @extend %bold-caps;
+  font-size: 13rem;
+}
