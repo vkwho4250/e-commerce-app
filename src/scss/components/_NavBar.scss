@@ -2,6 +2,12 @@
 
 #nav-bar {
   @include flex-container(space-between, center);
+  padding: 0 10vw;
   height: 5vh;
   background: $dark-gray;
+
+  .svg-icons {
+    width: 30%;
+    text-align: right;
+  }
 }

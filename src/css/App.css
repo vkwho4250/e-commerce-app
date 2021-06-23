@@ -108,9 +108,15 @@ h6 {
 }
 
 #nav-bar {
+  display: flex;
   justify-content: space-between;
-  align: center;
+  align-items: center;
   flex-direction: row;
+  padding: 0 10vw;
   height: 5vh;
   background: #101010;
+}
+#nav-bar .svg-icons {
+  width: 30%;
+  text-align: right;
 }
