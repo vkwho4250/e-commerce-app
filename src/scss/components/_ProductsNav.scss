@@ -1,0 +1,16 @@
+@use "../styles" as *;
+
+.product-nav {
+  position: relative;
+  height: 600rem;
+  @include flex-container(center, center);
+}
+
+.products-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300rem, 1fr));
+  grid-gap: 30rem;
+  height: 350rem;
+  width: 100%;
+}

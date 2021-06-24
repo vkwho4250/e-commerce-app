@@ -1,0 +1,42 @@
+@use "../styles" as *;
+
+.products-nav-btns {
+  height: inherit;
+  position: relative;
+  @include flex-container(flex-start, center, column);
+  transition: all 0.3s;
+  border-radius: 10rem;
+  cursor: pointer;
+
+  img {
+    height: 70%;
+  }
+
+  &:hover {
+    transform: translateY(-10rem);
+    box-shadow: 0 20rem 10rem -10rem rgba($dark-gray, 0.2);
+
+    button {
+      color: $dark-orange;
+    }
+  }
+}
+
+.right-arrow {
+  padding-left: 15rem;
+}
+
+.gray-block {
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  background: $mid-gray;
+  border-radius: 10rem;
+  width: 100%;
+  height: 75%;
+}
+
+.shop-text {
+  margin: 2% 0;
+  @include flex-container(space-around, center);
+}

@@ -1,15 +1,13 @@
-
-
 %bold-caps {
   text-transform: uppercase;
   font-weight: bold;
+  letter-spacing: 2rem;
 }
 
 h1 {
   @extend %bold-caps;
   font-size: 40rem;
 }
-
 
 h2 {
   @extend %bold-caps;
@@ -34,6 +32,11 @@ h5 {
 h6 {
   @extend %bold-caps;
   font-size: 14rem;
+}
+
+p {
+  line-height: 180%;
+  letter-spacing: 2rem;
 }
 
 .overline {

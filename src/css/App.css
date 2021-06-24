@@ -10,6 +10,7 @@ html {
 
 body {
   font: 15rem "Manrope", sans-serif;
+  font-weight: 200;
 }
 
 a {
@@ -44,11 +45,12 @@ input[type=radio] {
 button {
   border: none;
   outline: none;
-  font: inherit;
   text-transform: uppercase;
-  padding: 15rem 25rem;
+  padding: 18rem 50rem;
   cursor: pointer;
+  font: inherit;
   font-weight: 600;
+  letter-spacing: 2rem;
 }
 
 .orange-btn {
@@ -72,6 +74,7 @@ button {
 .subtitle, h6, h5, h4, h3, h2, h1 {
   text-transform: uppercase;
   font-weight: bold;
+  letter-spacing: 2rem;
 }
 
 h1 {
@@ -98,6 +101,11 @@ h6 {
   font-size: 14rem;
 }
 
+p {
+  line-height: 180%;
+  letter-spacing: 2rem;
+}
+
 .overline {
   font-size: 14rem;
   text-transform: uppercase;
@@ -107,16 +115,125 @@ h6 {
   font-size: 13rem;
 }
 
-#nav-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
+.page-content {
+  position: relative;
   padding: 0 10vw;
-  height: 5vh;
-  background: #101010;
+}
+
+#nav-bar {
+  position: fixed;
+  z-index: 99;
+  padding: 0 10vw;
+  width: 100vw;
 }
 #nav-bar .svg-icons {
   width: 30%;
   text-align: right;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  height: 10vh;
+  border-bottom: 1rem solid rgba(250, 250, 250, 0.5);
+}
+
+.cart-btn {
+  cursor: pointer;
+}
+
+.home-banner-img {
+  position: relative;
+  z-index: -1;
+  min-width: 100vw;
+}
+
+.home-description {
+  position: absolute;
+  left: 10vw;
+  top: 20vh;
+  width: 25vw;
+  color: white;
+}
+.home-description h1,
+.home-description h2,
+.home-description p {
+  margin: 2.5vh 0;
+}
+.home-description h1 {
+  font-size: 3vw;
+  line-height: 100%;
+}
+.home-description h2 {
+  font-size: 1vw;
+  font-weight: 200;
+  letter-spacing: 10rem;
+}
+.home-description p {
+  font-size: 0.75vw;
+  width: 70%;
+}
+
+.product-nav {
+  position: relative;
+  height: 600rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.products-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300rem, 1fr));
+  grid-gap: 30rem;
+  height: 350rem;
+  width: 100%;
+}
+
+.products-nav-btns {
+  height: inherit;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.3s;
+  border-radius: 10rem;
+  cursor: pointer;
+}
+.products-nav-btns img {
+  height: 70%;
+}
+.products-nav-btns:hover {
+  transform: translateY(-10rem);
+  box-shadow: 0 20rem 10rem -10rem rgba(16, 16, 16, 0.2);
+}
+.products-nav-btns:hover button {
+  color: #D87D4A;
+}
+
+.right-arrow {
+  padding-left: 15rem;
+}
+
+.gray-block {
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  background: #F1F1F1;
+  border-radius: 10rem;
+  width: 100%;
+  height: 75%;
+}
+
+.shop-text {
+  margin: 2% 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
 }

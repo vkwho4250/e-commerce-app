@@ -1,13 +1,23 @@
 @use "../styles" as *;
 
 #nav-bar {
-  @include flex-container(space-between, center);
+  position: fixed;
+  z-index: 99;
   padding: 0 10vw;
-  height: 5vh;
-  background: $dark-gray;
+  width: 100vw;
 
   .svg-icons {
     width: 30%;
     text-align: right;
   }
+}
+
+.nav-container {
+  @include flex-container(space-between, center);
+  height: 10vh;
+  border-bottom: 1rem solid rgba($light-gray, 0.5);
+}
+
+.cart-btn {
+  cursor: pointer;
 }

@@ -12,6 +12,7 @@ html {
 
 body {
   font: 15rem "Manrope", sans-serif;
+  font-weight: 200;
 }
 
 // == Links
@@ -53,11 +54,12 @@ input[type="radio"] {
 button {
   border: none;
   outline: none;
-  font: inherit;
   text-transform: uppercase;
-  padding: 15rem 25rem;
+  padding: 18rem 50rem;
   cursor: pointer;
+  font: inherit;
   font-weight: 600;
+  letter-spacing: 2rem;
 }
 
 .orange-btn {
