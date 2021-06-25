@@ -1,6 +1,6 @@
 import React from "react";
-import { ReactComponent as Logo } from "../assets/svgs/logo.svg";
-import { ReactComponent as ShoppingCart } from "../assets/svgs/icon-cart.svg";
+import { ReactComponent as Logo } from "../assets/nav-bar/logo.svg";
+import { ReactComponent as ShoppingCart } from "../assets/nav-bar/icon-cart.svg";
 
 export default function Navbar() {
   return (

@@ -1,3 +1,8 @@
+header {
+  border: 1rem solid red;
+  position: relative;
+}
+
 .home-banner-img {
   position: relative;
   z-index: -1;
@@ -7,29 +12,17 @@
 .home-description {
   position: absolute;
   left: 10vw;
-  top: 20vh;
-  width: 25vw;
+  top: 30%;
+  width: 400rem;
   color: white;
 
-  h1,
-  h2,
-  p {
-    margin: 2.5vh 0;
-  }
+  // h1,
+  // h2,
+  // p {
+  //   margin: 30rem 0;
+  // }
 
-  h1 {
-    font-size: 3vw;
-    line-height: 100%;
-  }
-
-  h2 {
-    font-size: 1vw;
-    font-weight: 200;
-    letter-spacing: 10rem;
-  }
-
-  p {
-    font-size: 0.75vw;
-    width: 70%;
-  }
+  // h1 {
+  //   line-height: 100%;
+  // }
 }

@@ -4,34 +4,45 @@
   letter-spacing: 2rem;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 30rem;
+}
+
 h1 {
   @extend %bold-caps;
-  font-size: 40rem;
+  font-size: 56rem;
+  line-height: 100%;
 }
 
 h2 {
   @extend %bold-caps;
-  font-size: 28rem;
+  font-size: 40rem;
 }
 
 h3 {
   @extend %bold-caps;
-  font-size: 24rem;
+  font-size: 32rem;
 }
 
 h4 {
   @extend %bold-caps;
-  font-size: 18rem;
+  font-size: 28rem;
 }
 
 h5 {
   @extend %bold-caps;
-  font-size: 18rem;
+  font-size: 24rem;
 }
 
 h6 {
   @extend %bold-caps;
-  font-size: 14rem;
+  font-size: 18rem;
 }
 
 p {
@@ -42,6 +53,8 @@ p {
 .overline {
   font-size: 14rem;
   text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 10rem;
 }
 
 .subtitle {

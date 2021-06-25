@@ -13,6 +13,7 @@ html {
 body {
   font: 15rem "Manrope", sans-serif;
   font-weight: 200;
+  overflow-x: hidden;
 }
 
 // == Links
@@ -71,13 +72,21 @@ button {
   }
 }
 
-.white-btn {
-  background: white;
+.clear-btn {
   color: black;
   border: 1rem solid black;
 
   &:hover {
     background: black;
     color: white;
+  }
+}
+
+.black-btn {
+  background: black;
+  color: white;
+
+  &:hover {
+    background: $cloud-gray;
   }
 }
