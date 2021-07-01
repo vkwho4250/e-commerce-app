@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Category from "./pages/Category";
+import Product from "./pages/Product";
 import Home from "./pages/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ScrollToTop from "../ScrollToTop";
@@ -29,8 +30,11 @@ function App() {
       <AppContext.Provider value={appContextValue}>
         <Navbar />
         <Switch>
-          <Route path="/category/:handle">
+          <Route path="/category/:categoryName">
             <Category />
+          </Route>
+          <Route path="/product/:productId">
+            <Product />
           </Route>
           <Route path="/">
             <Home />

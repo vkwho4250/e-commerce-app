@@ -1,11 +1,18 @@
 import React, { useContext } from "react";
+import { useHistory } from "react-router-dom";
 import getLocalImage from "../getLocalImage";
 import { AppContext } from "./App";
-import Counter from "./Counter";
+import ProductPurchase from "./ProductPurchase";
 
-export default function CategoryProduct({ product, index }) {
+export default function CategoryProduct({ product, index = "", page }) {
   const { deviceLayout } = useContext(AppContext);
   const productImage = getLocalImage(product.image[deviceLayout]);
+
+  const history = useHistory();
+
+  const handleSeeProduct = () => {
+    history.push(`/product/${product.id}`);
+  };
 
   return (
     <div className="category-product">
@@ -19,10 +26,14 @@ export default function CategoryProduct({ product, index }) {
         {product.new && <p className="overline">New Product</p>}
         <h2>{product.name}</h2>
         <p>{product.description}</p>
-        <button className="orange-btn">See Product</button>
-        <div>
-          <Counter />
-        </div>
+
+        {page === "category" ? (
+          <button className="orange-btn" onClick={handleSeeProduct}>
+            See Product
+          </button>
+        ) : (
+          <ProductPurchase product={product} />
+        )}
       </div>
     </div>
   );

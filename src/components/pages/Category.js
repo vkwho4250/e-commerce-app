@@ -6,23 +6,27 @@ import CategoryProduct from "../CategoryProduct";
 import productsData from "../../data.json";
 
 export default function Category() {
-  const { handle } = useParams();
-  const category = handle.match(/\w+/i)[0];
+  const { categoryName } = useParams();
 
   const categoryProducts = productsData
-    .filter((product) => product.category === category)
+    .filter((product) => product.category === categoryName)
     .reverse();
 
   return (
     <div id="category-page">
       <header>
-        <h1>{category}</h1>
+        <h1>{categoryName}</h1>
       </header>
       <div className="page-content">
         <section className="category-products">
           {categoryProducts.map((product, index) => {
             return (
-              <CategoryProduct key={index} product={product} index={index} />
+              <CategoryProduct
+                key={index}
+                product={product}
+                index={index}
+                page="category"
+              />
             );
           })}
         </section>

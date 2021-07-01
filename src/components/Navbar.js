@@ -20,9 +20,9 @@ export default function Navbar() {
         <Logo className="svg-icons" onClick={test} />
         <div>
           <Link to="/">Home</Link>
-          <Link to="/category/:headphones">Headphones</Link>
-          <Link to="/category/:speakers">Speakers</Link>
-          <Link to="/category/:earphones">Earphones</Link>
+          <Link to="/category/headphones">Headphones</Link>
+          <Link to="/category/speakers">Speakers</Link>
+          <Link to="/category/earphones">Earphones</Link>
         </div>
         <div className="svg-icons">
           <ShoppingCart className="cart-btn" />

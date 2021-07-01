@@ -5,21 +5,25 @@ import CategoryNav from "../CategoryNav";
 import About from "../About";
 import CategoryProduct from "../CategoryProduct";
 import productsData from "../../data.json";
-import getLocalImage from "../../getLocalImage";
-import { AppContext } from "../App";
 
 export default function Product() {
-  const { handle } = useParams();
-  const productId = handle.match(/\w+/i)[0];
+  const { productId } = useParams();
 
-  const product = productsData.filter((product) => product.id === productId);
-
-  const { deviceLayout } = useContext(AppContext);
-  const productImage = getLocalImage(product.image[deviceLayout]);
+  const product = productsData.filter(
+    (product) => product.id === parseInt(productId),
+  );
 
   return (
     <div id="product-page" className="page-content">
-      <section className="product-information"></section>
+      <section className="product-information">
+        <CategoryProduct key={product.id} product={product[0]} page="product" />
+        <div>
+          {/* Features */}
+          {/* in the box */}
+        </div>
+      </section>
+      <CategoryNav />
+      <About />
     </div>
   );
 }

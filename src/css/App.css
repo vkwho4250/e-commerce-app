@@ -465,6 +465,13 @@ footer p {
   border-radius: 10rem;
 }
 
+.purchase-btns {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+
 .counter {
   display: flex;
   justify-content: space-between;
@@ -472,7 +479,7 @@ footer p {
   flex-direction: row;
   width: 120rem;
   background: #f1f1f1;
-  margin: 40rem 0;
+  margin-right: 20rem;
 }
 .counter p {
   margin: 0;
