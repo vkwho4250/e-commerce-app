@@ -1,17 +1,28 @@
-import React from "react";
-import { ReactComponent as Logo } from "../assets/nav-bar/logo.svg";
-import { ReactComponent as ShoppingCart } from "../assets/nav-bar/icon-cart.svg";
+import React, { useContext } from "react";
+import { ReactComponent as ShoppingCart } from "../assets/shared/desktop/icon-cart.svg";
+import { ReactComponent as Logo } from "../assets/shared/desktop/logo.svg";
+
+import { Link } from "react-router-dom";
+
+import { AppContext } from "./App";
 
 export default function Navbar() {
+  const { handleDeviceLayout } = useContext(AppContext);
+
+  const test = () => {
+    console.log("click");
+    handleDeviceLayout();
+  };
+
   return (
     <nav id="nav-bar">
       <div className="nav-container">
-        <Logo className="svg-icons" />
+        <Logo className="svg-icons" onClick={test} />
         <div>
-          <a href="#">Home</a>
-          <a href="#">Headphones</a>
-          <a href="#">Speakers</a>
-          <a href="#">Earphones</a>
+          <Link to="/">Home</Link>
+          <Link to="/category/:headphones">Headphones</Link>
+          <Link to="/category/:speakers">Speakers</Link>
+          <Link to="/category/:earphones">Earphones</Link>
         </div>
         <div className="svg-icons">
           <ShoppingCart className="cart-btn" />

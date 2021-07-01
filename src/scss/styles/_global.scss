@@ -25,6 +25,11 @@ a {
   padding: 30rem;
   letter-spacing: 2rem;
   font-weight: 500;
+  font-size: 13rem;
+
+  &:hover {
+    color: $dark-orange;
+  }
 }
 
 // == Form Inputs

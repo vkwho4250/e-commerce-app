@@ -1,0 +1,15 @@
+@use "../styles" as *;
+
+.category-nav {
+  position: relative;
+  @include flex-container(center, center);
+  padding: 100rem 0;
+}
+
+.categories-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300rem, 1fr));
+  grid-gap: 30rem;
+  width: 100%;
+}

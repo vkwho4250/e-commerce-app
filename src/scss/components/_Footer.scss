@@ -1,0 +1,47 @@
+@use "../styles/" as *;
+
+footer {
+  background: $dark-gray;
+  padding: 30rem 0;
+
+  .nav-container {
+    border: none;
+  }
+
+  p {
+    color: white;
+  }
+}
+
+.footer-text {
+  margin-top: 20rem;
+  width: 40%;
+  height: 250rem;
+}
+
+.disclaimer {
+  position: absolute;
+  bottom: 0;
+  margin-top: 75rem;
+  font-size: 13rem;
+  text-transform: uppercase;
+
+  a {
+    padding: 0;
+  }
+}
+
+.socials {
+  position: absolute;
+  top: 60%;
+  right: 0;
+  a {
+    padding: 10rem;
+
+    &:hover {
+      svg.socials-icon path {
+        fill: $dark-orange;
+      }
+    }
+  }
+}

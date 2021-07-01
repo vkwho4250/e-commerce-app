@@ -21,6 +21,10 @@ a {
   padding: 30rem;
   letter-spacing: 2rem;
   font-weight: 500;
+  font-size: 13rem;
+}
+a:hover {
+  color: #d87d4a;
 }
 
 input {
@@ -138,38 +142,12 @@ p {
 
 .page-content {
   position: relative;
-  padding: 0 10vw;
+  width: 80vw;
+  margin: auto;
 }
 
 section {
   padding: 75rem 0;
-}
-
-#nav-bar {
-  position: fixed;
-  z-index: 99;
-  padding: 0 10vw;
-  width: 100vw;
-}
-#nav-bar .svg-icons {
-  width: 30%;
-  text-align: right;
-}
-#nav-bar a:hover {
-  color: #d87d4a;
-}
-
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  height: 10vh;
-  border-bottom: 1rem solid rgba(250, 250, 250, 0.5);
-}
-
-.cart-btn {
-  cursor: pointer;
 }
 
 header {
@@ -191,7 +169,88 @@ header {
   color: white;
 }
 
-.product-nav {
+#category-page {
+  padding-top: 10vh;
+}
+#category-page header {
+  background: #101010;
+  height: 336rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: white;
+}
+#category-page header h1 {
+  font-size: 40rem;
+}
+
+#nav-bar {
+  position: fixed;
+  z-index: 99;
+  padding: 0 10vw;
+  width: 100vw;
+  background: #101010;
+}
+#nav-bar .svg-icons {
+  width: 30%;
+  text-align: right;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  height: 10vh;
+  border-bottom: 1rem solid rgba(250, 250, 250, 0.5);
+}
+
+.cart-btn {
+  cursor: pointer;
+}
+
+footer {
+  background: #101010;
+  padding: 30rem 0;
+}
+footer .nav-container {
+  border: none;
+}
+footer p {
+  color: white;
+}
+
+.footer-text {
+  margin-top: 20rem;
+  width: 40%;
+  height: 250rem;
+}
+
+.disclaimer {
+  position: absolute;
+  bottom: 0;
+  margin-top: 75rem;
+  font-size: 13rem;
+  text-transform: uppercase;
+}
+.disclaimer a {
+  padding: 0;
+}
+
+.socials {
+  position: absolute;
+  top: 60%;
+  right: 0;
+}
+.socials a {
+  padding: 10rem;
+}
+.socials a:hover svg.socials-icon path {
+  fill: #d87d4a;
+}
+
+.category-nav {
   position: relative;
   display: flex;
   justify-content: center;
@@ -200,7 +259,7 @@ header {
   padding: 100rem 0;
 }
 
-.products-container {
+.categories-container {
   position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300rem, 1fr));
@@ -208,7 +267,11 @@ header {
   width: 100%;
 }
 
-.products-nav-btns {
+.category-nav-link {
+  padding: 0;
+}
+
+.category-nav-btns {
   height: 350rem;
   position: relative;
   display: flex;
@@ -219,15 +282,16 @@ header {
   border-radius: 10rem;
   cursor: pointer;
 }
-.products-nav-btns h6,
-.products-nav-btns p {
+.category-nav-btns h6,
+.category-nav-btns p {
   margin: 0;
+  color: black;
 }
-.products-nav-btns:hover {
+.category-nav-btns:hover {
   transform: translateY(-10rem);
   box-shadow: 0 20rem 10rem -10rem rgba(16, 16, 16, 0.2);
 }
-.products-nav-btns:hover .shop-text p {
+.category-nav-btns:hover .shop-text p {
   color: #d87d4a;
 }
 
@@ -343,4 +407,60 @@ header {
 .sub-promo-item-desc {
   padding-left: 100rem;
   position: absolute;
+}
+
+.about {
+  border: 1rem solid red;
+}
+
+.about-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300rem, 1fr));
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  column-gap: 20rem;
+  row-gap: 50rem;
+}
+
+.about-text-container {
+  width: 70%;
+}
+.about-text-container h3 span {
+  color: #d87d4a;
+}
+
+.about-image {
+  max-width: 100%;
+  border-radius: 10rem;
+}
+
+.category-product {
+  border: 1rem solid orange;
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300rem, 1fr));
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  column-gap: 20rem;
+  row-gap: 50rem;
+  justify-items: flex-start;
+  column-gap: 100rem;
+  margin: 100rem 0;
+}
+.category-product .overline {
+  color: #d87d4a;
+}
+
+.product-text-container {
+  order: 1;
+  width: 80%;
+}
+
+.product-image {
+  width: 100%;
+  border-radius: 10rem;
 }

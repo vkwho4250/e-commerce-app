@@ -1,9 +1,16 @@
-@forward "./NavBar";
-
 // Pages
 @forward "./pages/Home";
+@forward "./pages/Category";
 
 // Components
-@forward "./ProductsNav";
-@forward "./ProductsNavBtn";
+
+// == Layout ==
+@forward "./NavBar";
+@forward "./Footer";
+
+@forward "./CategoryNav";
+@forward "./CategoryNavBtn";
 @forward "./PromoItems";
+@forward "./About";
+
+@forward "./CategoryProduct";

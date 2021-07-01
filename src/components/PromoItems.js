@@ -1,10 +1,22 @@
-import React from "react";
-import largeSpeaker from "../assets/home-page/image-speaker-zx9.png";
-import tableSpeaker from "../assets/home-page/image-speaker-zx7.jpg";
-import earphone from "../assets/home-page/image-earphones-yx1.jpg";
-import patternCircles from "../assets/home-page/pattern-circles.svg";
+import React, { useContext } from "react";
+
+import patternCircles from "../assets/home/desktop/pattern-circles.svg";
+import getLocalImage from "../getLocalImage";
+import { AppContext } from "./App";
 
 export default function PromoItems() {
+  const { deviceLayout } = useContext(AppContext);
+
+  const firstPromo = getLocalImage(
+    `home/${deviceLayout}/image-speaker-zx9.png`,
+  );
+  const secondPromo = getLocalImage(
+    `home/${deviceLayout}/image-speaker-zx7.jpg`,
+  );
+  const thirdPromo = getLocalImage(
+    `home/${deviceLayout}/image-earphones-yx1.jpg`,
+  );
+
   return (
     <section className="promo-items">
       <div className="promo-items-grid">
@@ -15,11 +27,7 @@ export default function PromoItems() {
               className="pattern-circles"
               alt="circle patterns"
             />
-            <img
-              src={largeSpeaker}
-              className="promo-item-1"
-              alt="speaker zx9"
-            />
+            <img src={firstPromo} className="promo-item-1" alt="speaker zx9" />
           </div>
           <div className="first-promo-item-desc">
             <h1>Zx9 Speaker</h1>
@@ -33,7 +41,7 @@ export default function PromoItems() {
         <div className="grid-item sub-promo second-promo-item">
           <img
             className="sub-promo-image"
-            src={tableSpeaker}
+            src={secondPromo}
             alt="speaker zx7"
           />
           <div className="sub-promo-item-desc">
@@ -42,7 +50,11 @@ export default function PromoItems() {
           </div>
         </div>
         <div className="grid-item sub-promo">
-          <img src={earphone} className="sub-promo-image" alt="earphone yx1" />
+          <img
+            src={thirdPromo}
+            className="sub-promo-image"
+            alt="earphone yx1"
+          />
         </div>
         <div className="grid-item sub-promo third-promo-item">
           <div className="sub-promo-item-desc">

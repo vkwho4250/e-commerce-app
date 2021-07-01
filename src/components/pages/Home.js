@@ -1,15 +1,20 @@
-import React from "react";
-import homeBannerImg from "../../assets/home-page/image-hero.jpg";
-import ProductsNav from "../ProductsNav";
+import React, { useContext } from "react";
+import ProductsNav from "../CategoryNav";
 import PromoItems from "../PromoItems";
 import About from "../About";
 
+import getLocalImage from "../../getLocalImage";
+import { AppContext } from "../App";
+
 export default function Home() {
+  const { deviceLayout } = useContext(AppContext);
+  const homeBanner = getLocalImage(`home/${deviceLayout}/image-header.jpg`);
+
   return (
     <div id="home-page">
       <header>
         <img
-          src={homeBannerImg}
+          src={homeBanner}
           className="home-banner-img"
           alt="homepage banner"
         ></img>

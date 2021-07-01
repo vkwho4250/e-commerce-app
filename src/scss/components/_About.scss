@@ -1,0 +1,22 @@
+@use "../styles" as *;
+
+.about {
+  border: 1rem solid red;
+}
+
+.about-grid-container {
+  @include even-grid-container(300rem);
+}
+
+.about-text-container {
+  width: 70%;
+
+  h3 span {
+    color: $dark-orange;
+  }
+}
+
+.about-image {
+  max-width: 100%;
+  border-radius: $rounded-borders;
+}

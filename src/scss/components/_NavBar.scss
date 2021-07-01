@@ -5,14 +5,11 @@
   z-index: 99;
   padding: 0 10vw;
   width: 100vw;
+  background: $dark-gray;
 
   .svg-icons {
     width: 30%;
     text-align: right;
-  }
-
-  a:hover {
-    color: $dark-orange;
   }
 }
 

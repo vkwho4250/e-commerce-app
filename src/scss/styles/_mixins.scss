@@ -4,3 +4,13 @@
   align-items: $align;
   flex-direction: $direction;
 }
+
+@mixin even-grid-container($minmax) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($minmax, 1fr));
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  column-gap: 20rem;
+  row-gap: 50rem;
+}
