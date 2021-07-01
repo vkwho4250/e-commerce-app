@@ -13,8 +13,6 @@ export default function Category() {
     .filter((product) => product.category === category)
     .reverse();
 
-  console.log(categoryProducts);
-
   return (
     <div id="category-page">
       <header>

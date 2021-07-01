@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 import getLocalImage from "../getLocalImage";
 import { AppContext } from "./App";
+import Counter from "./Counter";
 
 export default function CategoryProduct({ product, index }) {
-  console.log(product);
-
   const { deviceLayout } = useContext(AppContext);
   const productImage = getLocalImage(product.image[deviceLayout]);
 
@@ -21,6 +20,9 @@ export default function CategoryProduct({ product, index }) {
         <h2>{product.name}</h2>
         <p>{product.description}</p>
         <button className="orange-btn">See Product</button>
+        <div>
+          <Counter />
+        </div>
       </div>
     </div>
   );

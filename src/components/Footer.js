@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../assets/shared/desktop/logo.svg";
 
 import { ReactComponent as Facebook } from "../assets/shared/desktop/icon-facebook.svg";
@@ -12,10 +13,10 @@ export default function Footer() {
         <div className="nav-container">
           <Logo className="svg-icons" />
           <div>
-            <a href="#">Home</a>
-            <a href="#">Headphones</a>
-            <a href="#">Speakers</a>
-            <a href="#">Earphones</a>
+            <Link to="/">Home</Link>
+            <Link to="/category/:headphones">Headphones</Link>
+            <Link to="/category/:speakers">Speakers</Link>
+            <Link to="/category/:earphones">Earphones</Link>
           </div>
         </div>
         <div className="footer-text">

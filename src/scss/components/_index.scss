@@ -1,6 +1,7 @@
 // Pages
 @forward "./pages/Home";
 @forward "./pages/Category";
+@forward "./pages/Product";
 
 // Components
 
@@ -14,3 +15,5 @@
 @forward "./About";
 
 @forward "./CategoryProduct";
+
+@forward "./Counter";
