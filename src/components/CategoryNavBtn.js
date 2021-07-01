@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function CategoryNavBtn({ category }) {
   return (
-    <Link to={`/category/:${category.name}`} className="category-nav-link">
+    <Link to={`/category/${category.name}`} className="category-nav-link">
       <div className="category-nav-btns">
         <div className="gray-block"></div>
         <img

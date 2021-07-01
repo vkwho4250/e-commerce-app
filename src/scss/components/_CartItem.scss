@@ -1,0 +1,29 @@
+@use "../styles" as *;
+
+.cart-item {
+  @include flex-container(space-between, center);
+  padding: 15rem 0;
+  height: 110rem;
+
+  p,
+  .counter {
+    margin: 0;
+  }
+
+  p {
+    font-weight: bold;
+
+    &:last-child {
+      color: darken($mid-gray, 50%);
+    }
+  }
+}
+
+.cart-item-img {
+  height: 100%;
+  border-radius: $rounded-borders;
+}
+
+.cart-item-details {
+  width: 40%;
+}

@@ -8,8 +8,5 @@
 
 .categories-container {
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300rem, 1fr));
-  grid-gap: 30rem;
-  width: 100%;
+  @include even-grid-container(300rem);
 }

@@ -3,9 +3,9 @@
 @forward "./pages/Category";
 @forward "./pages/Product";
 
-// Components
+// === Components ===
 
-// == Layout ==
+// = Layout ==
 @forward "./NavBar";
 @forward "./Footer";
 
@@ -16,5 +16,15 @@
 
 @forward "./CategoryProduct";
 
+// = Product Page
+
 @forward "./ProductPurchase";
 @forward "./Counter";
+@forward "./ProductFeatures";
+@forward "./ProductGallery.scss";
+@forward "./ProductRecs";
+@forward "./ProductEachRec";
+
+// == Cart
+@forward "./Cart";
+@forward "./CartItem";

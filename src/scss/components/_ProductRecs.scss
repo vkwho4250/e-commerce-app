@@ -1,0 +1,12 @@
+@use "../styles" as *;
+
+.product-recs {
+  h3 {
+    text-align: center;
+  }
+}
+
+.product-recs-container {
+  margin-top: 60rem;
+  @include even-grid-container(300rem);
+}

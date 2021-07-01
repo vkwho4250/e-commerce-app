@@ -1,0 +1,40 @@
+@use "../styles" as *;
+
+.cart {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba($dark-gray, 0.5);
+}
+
+.cart-summary {
+  position: absolute;
+  top: 15vh;
+  right: 10vw;
+  width: 500rem;
+  border-radius: $rounded-borders;
+  padding: 30rem;
+  background: white;
+}
+
+.remove-all-btn {
+  background: none;
+  padding: 0;
+  height: fit-content;
+  text-decoration: underline;
+}
+
+.checkout-btn {
+  width: 100%;
+}
+
+.flex-row-container {
+  @include flex-container(space-between, center);
+  margin-bottom: 30rem;
+
+  h5,
+  h6 {
+    margin: 0;
+  }
+}

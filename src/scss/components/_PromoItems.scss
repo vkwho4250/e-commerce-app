@@ -8,7 +8,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
-  column-gap: 20rem;
+  column-gap: $global-col-gap;
   row-gap: 50rem;
 }
 

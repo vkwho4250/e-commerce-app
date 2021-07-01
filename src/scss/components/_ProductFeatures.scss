@@ -1,0 +1,16 @@
+@use "../styles" as *;
+
+.product-features {
+  @include even-grid-container(400rem);
+  align-items: flex-start;
+}
+
+.in-the-box {
+  li {
+    span {
+      color: $dark-orange;
+      font-weight: bold;
+      margin-right: 20rem;
+    }
+  }
+}

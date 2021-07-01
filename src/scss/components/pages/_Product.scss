@@ -1,0 +1,19 @@
+@use "../../styles" as *;
+
+#product-page {
+  padding-top: 15vh;
+}
+
+.go-back {
+  a {
+    color: black;
+
+    &:hover {
+      color: $dark-orange;
+    }
+  }
+}
+
+.product-information {
+  padding-top: 0;
+}
