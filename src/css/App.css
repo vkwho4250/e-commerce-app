@@ -65,6 +65,9 @@ button {
 .orange-btn:hover {
   background: #fbaf85;
 }
+.orange-btn:active {
+  background: #101010;
+}
 
 .clear-btn {
   color: black;
@@ -590,7 +593,7 @@ footer p {
   margin-bottom: 40rem;
 }
 
-.cart {
+#cart {
   position: fixed;
   top: 0;
   width: 100vw;

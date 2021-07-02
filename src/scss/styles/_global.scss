@@ -75,6 +75,10 @@ button {
   &:hover {
     background: $light-orange;
   }
+
+  &:active {
+    background: $dark-gray;
+  }
 }
 
 .clear-btn {
