@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import CategoryNav from "../CategoryNav";
 import About from "../About";
 import CategoryProduct from "../CategoryProduct";
 import ProductFeatures from "../ProductFeatures";
 import ProductGallery from "../ProductGallery";
 import ProductRecs from "../ProductRecs";
+import { AppContext } from "../App";
 
 import productsData from "../../data.json";
 
 export default function Product() {
   const { productId } = useParams();
+  const { goBack } = useContext(AppContext);
 
   const product = productsData.filter(
     (product) => product.id === parseInt(productId),
@@ -20,7 +22,7 @@ export default function Product() {
   return (
     <div id="product-page" className="page-content">
       <div className="go-back">
-        <Link to={`/category/${product.category}`}>Go Back</Link>
+        <button onClick={() => goBack()}>Go Back</button>
       </div>
       <section className="product-information">
         <CategoryProduct key={product.id} product={product} page="product" />

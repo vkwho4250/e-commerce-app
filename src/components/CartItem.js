@@ -4,7 +4,7 @@ import getLocalImage from "../getLocalImage";
 import productsData from "../data.json";
 import { AppContext } from "./App";
 
-export default function CartItem({ cartItem }) {
+export default function CartItem({ cartItem, location = "cart-window" }) {
   const { handleItemDelete, handleItemEdit } = useContext(AppContext);
 
   const handleCartItemClick = (amount) => {
@@ -31,12 +31,16 @@ export default function CartItem({ cartItem }) {
       <img src={itemImage} className="cart-item-img" alt={itemProduct.name} />
       <div className="cart-item-details">
         <p>{itemProduct.name}</p>
-        <p>$ {formattedPrice}</p>
+        <p className="gray-format">$ {formattedPrice}</p>
       </div>
-      <Counter
-        handleCounterClick={handleCartItemClick}
-        itemCount={cartItem.quantity}
-      />
+      {location === "cart-window" ? (
+        <Counter
+          handleCounterClick={handleCartItemClick}
+          itemCount={cartItem.quantity}
+        />
+      ) : (
+        <p className="gray-format">x{cartItem.quantity}</p>
+      )}
     </div>
   );
 }

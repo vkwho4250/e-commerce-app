@@ -12,10 +12,10 @@
 
   p {
     font-weight: bold;
+  }
 
-    &:last-child {
-      color: darken($mid-gray, 50%);
-    }
+  .gray-format {
+    color: darken($mid-gray, 50%);
   }
 }
 

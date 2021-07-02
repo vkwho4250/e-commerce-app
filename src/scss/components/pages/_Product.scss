@@ -5,8 +5,11 @@
 }
 
 .go-back {
-  a {
-    color: black;
+  button {
+    background: none;
+    text-transform: initial;
+    font-size: 13rem;
+    padding: 0;
 
     &:hover {
       color: $dark-orange;

@@ -2,6 +2,7 @@
 @forward "./pages/Home";
 @forward "./pages/Category";
 @forward "./pages/Product";
+@forward "./pages/Checkout";
 
 // === Components ===
 
@@ -28,3 +29,8 @@
 // == Cart
 @forward "./Cart";
 @forward "./CartItem";
+
+// == Checkout
+@forward "./CheckoutForm";
+@forward "./CheckoutSummary";
+@forward "./CheckoutSuccess";

@@ -5,7 +5,7 @@ import getLocalImage from "../getLocalImage";
 import { AppContext } from "./App";
 
 export default function PromoItems() {
-  const { deviceLayout } = useContext(AppContext);
+  const { deviceLayout, handleSeeProduct } = useContext(AppContext);
 
   const firstPromo = getLocalImage(
     `home/${deviceLayout}/image-speaker-zx9.png`,
@@ -35,7 +35,9 @@ export default function PromoItems() {
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>
-            <button className="black-btn">See Product</button>
+            <button className="black-btn" onClick={() => handleSeeProduct(6)}>
+              See Product
+            </button>
           </div>
         </div>
         <div className="grid-item sub-promo second-promo-item">
@@ -45,8 +47,10 @@ export default function PromoItems() {
             alt="speaker zx7"
           />
           <div className="sub-promo-item-desc">
-            <h2>Zx9 Speaker</h2>
-            <button className="clear-btn">See Product</button>
+            <h2>Zx7 Speaker</h2>
+            <button className="clear-btn" onClick={() => handleSeeProduct(5)}>
+              See Product
+            </button>
           </div>
         </div>
         <div className="grid-item sub-promo">
@@ -59,7 +63,9 @@ export default function PromoItems() {
         <div className="grid-item sub-promo third-promo-item">
           <div className="sub-promo-item-desc">
             <h2>YX1 Earphones</h2>
-            <button className="clear-btn">See Product</button>
+            <button className="clear-btn" onClick={() => handleSeeProduct(1)}>
+              See Product
+            </button>
           </div>
         </div>
       </div>

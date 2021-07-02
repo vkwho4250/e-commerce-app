@@ -1,0 +1,22 @@
+@use "../../styles" as *;
+
+#checkout-page {
+  padding: 15vh;
+  background: $mid-gray;
+}
+
+.info-header {
+  color: $dark-orange;
+}
+.checkout-grid-container {
+  margin: 50rem 0;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: $global-col-gap;
+
+  .grid-item {
+    background: white;
+    border-radius: $rounded-borders;
+    padding: 50rem;
+  }
+}

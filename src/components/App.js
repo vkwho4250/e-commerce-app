@@ -1,17 +1,18 @@
 import "../css/App.css";
 
 import React, { useEffect, useState } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
 import ScrollToTop from "../ScrollToTop";
-import { useHistory } from "react-router";
 
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Category from "./pages/Category";
 import Product from "./pages/Product";
 import Home from "./pages/Home";
-import Cart from "./Cart";
+import Checkout from "./pages/Checkout";
+
 import { v4 as uuidv4 } from "uuid";
+import Cart from "./Cart";
 import productsData from "../data.json";
 
 export const AppContext = React.createContext();
@@ -23,13 +24,8 @@ function App() {
   const [cartItems, setCartItems] = useState([
     {
       id: uuidv4(),
-      productId: 3,
+      productId: 1,
       quantity: 10,
-    },
-    {
-      id: uuidv4(),
-      productId: 2,
-      quantity: 1,
     },
   ]);
 
@@ -103,6 +99,12 @@ function App() {
     history.push(`/product/${productId}`);
   };
 
+  const handleCheckout = () => {
+    history.push("/checkout");
+  };
+
+  const goBack = () => history.goBack();
+
   const appContextValue = {
     deviceLayout,
     handleDeviceLayout,
@@ -111,6 +113,9 @@ function App() {
     handleItemDelete,
     handleItemEdit,
     handleItemRemoveAll,
+    goBack,
+    cartItems,
+    cartTotal,
   };
 
   return (
@@ -119,6 +124,9 @@ function App() {
       <AppContext.Provider value={appContextValue}>
         <Navbar handleShowCart={handleShowCart} />
         <Switch>
+          <Route path="/checkout">
+            <Checkout />
+          </Route>
           <Route path="/category/:categoryName">
             <Category />
           </Route>
@@ -131,9 +139,8 @@ function App() {
         </Switch>
         {showCart && (
           <Cart
-            cartItems={cartItems}
-            cartTotal={cartTotal}
             handleShowCart={handleShowCart}
+            handleCheckout={handleCheckout}
           />
         )}
         <Footer />

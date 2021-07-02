@@ -7,7 +7,7 @@ import getLocalImage from "../../getLocalImage";
 import { AppContext } from "../App";
 
 export default function Home() {
-  const { deviceLayout } = useContext(AppContext);
+  const { deviceLayout, handleSeeProduct } = useContext(AppContext);
   const homeBanner = getLocalImage(`home/${deviceLayout}/image-header.jpg`);
 
   return (
@@ -25,7 +25,9 @@ export default function Home() {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <button className="orange-btn">See Product</button>
+          <button className="orange-btn" onClick={() => handleSeeProduct(4)}>
+            See Product
+          </button>
         </div>
       </header>
       <div className="page-content">
