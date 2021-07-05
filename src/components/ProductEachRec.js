@@ -3,7 +3,7 @@ import getLocalImage from "../getLocalImage";
 import { AppContext } from "./App";
 
 export default function ProductEachRec({ rec }) {
-  const { deviceLayout, handleSeeProduct } = useContext(AppContext);
+  const { deviceLayout, handleRedirect } = useContext(AppContext);
   const recImage = getLocalImage(rec.image[deviceLayout]);
 
   return (
@@ -13,7 +13,7 @@ export default function ProductEachRec({ rec }) {
       <button
         className="orange-btn"
         onClick={() => {
-          handleSeeProduct(rec.id);
+          handleRedirect(`/product/${rec.id}`);
         }}
       >
         See Product

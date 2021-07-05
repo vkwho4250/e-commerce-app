@@ -5,7 +5,7 @@ import getLocalImage from "../getLocalImage";
 import { AppContext } from "./App";
 
 export default function PromoItems() {
-  const { deviceLayout, handleSeeProduct } = useContext(AppContext);
+  const { deviceLayout, handleRedirect } = useContext(AppContext);
 
   const firstPromo = getLocalImage(
     `home/${deviceLayout}/image-speaker-zx9.png`,
@@ -35,7 +35,10 @@ export default function PromoItems() {
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>
-            <button className="black-btn" onClick={() => handleSeeProduct(6)}>
+            <button
+              className="black-btn"
+              onClick={() => handleRedirect("/product/6")}
+            >
               See Product
             </button>
           </div>
@@ -48,7 +51,10 @@ export default function PromoItems() {
           />
           <div className="sub-promo-item-desc">
             <h2>Zx7 Speaker</h2>
-            <button className="clear-btn" onClick={() => handleSeeProduct(5)}>
+            <button
+              className="clear-btn"
+              onClick={() => handleRedirect("/product/5")}
+            >
               See Product
             </button>
           </div>
@@ -63,7 +69,10 @@ export default function PromoItems() {
         <div className="grid-item sub-promo third-promo-item">
           <div className="sub-promo-item-desc">
             <h2>YX1 Earphones</h2>
-            <button className="clear-btn" onClick={() => handleSeeProduct(1)}>
+            <button
+              className="clear-btn"
+              onClick={() => handleRedirect("/product/1")}
+            >
               See Product
             </button>
           </div>

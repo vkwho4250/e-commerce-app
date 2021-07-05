@@ -21,13 +21,7 @@ function App() {
   const [deviceLayout, setDeviceLayout] = useState("desktop");
   const [showCart, setShowCart] = useState(false);
   const [cartTotal, setCartTotal] = useState(0);
-  const [cartItems, setCartItems] = useState([
-    {
-      id: uuidv4(),
-      productId: 1,
-      quantity: 10,
-    },
-  ]);
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     const calcCartTotal = () => {
@@ -92,15 +86,11 @@ function App() {
     setDeviceLayout("mobile");
   };
 
-  // redirect to product page
+  // redirect to any page
   let history = useHistory();
 
-  const handleSeeProduct = (productId) => {
-    history.push(`/product/${productId}`);
-  };
-
-  const handleCheckout = () => {
-    history.push("/checkout");
+  const handleRedirect = (destination) => {
+    history.push(destination);
   };
 
   const goBack = () => history.goBack();
@@ -108,7 +98,7 @@ function App() {
   const appContextValue = {
     deviceLayout,
     handleDeviceLayout,
-    handleSeeProduct,
+    handleRedirect,
     handleItemAdd,
     handleItemDelete,
     handleItemEdit,
@@ -137,12 +127,7 @@ function App() {
             <Home />
           </Route>
         </Switch>
-        {showCart && (
-          <Cart
-            handleShowCart={handleShowCart}
-            handleCheckout={handleCheckout}
-          />
-        )}
+        {showCart && <Cart handleShowCart={handleShowCart} />}
         <Footer />
       </AppContext.Provider>
     </>

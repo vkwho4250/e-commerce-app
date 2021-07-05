@@ -4,7 +4,7 @@ import { AppContext } from "./App";
 import ProductPurchase from "./ProductPurchase";
 
 export default function CategoryProduct({ product, index = "", page }) {
-  const { deviceLayout, handleSeeProduct } = useContext(AppContext);
+  const { deviceLayout, handleRedirect } = useContext(AppContext);
   const productImage = getLocalImage(product.image[deviceLayout]);
 
   return (
@@ -23,7 +23,7 @@ export default function CategoryProduct({ product, index = "", page }) {
         {page === "category" ? (
           <button
             className="orange-btn"
-            onClick={() => handleSeeProduct(product.id)}
+            onClick={() => handleRedirect(`/product/${product.id}`)}
           >
             See Product
           </button>

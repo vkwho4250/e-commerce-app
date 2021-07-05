@@ -1,10 +1,87 @@
-import React, { useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { AppContext } from "../App";
 
 import CheckoutForm from "./CheckoutForm";
-import CheckoutSummary from "./CheckoutSummary";
+import CheckoutSuccess from "./CheckoutSuccess";
+
 export default function Checkout() {
-  const { goBack } = useContext(AppContext);
+  const { goBack, cartTotal, handleItemRemoveAll, handleRedirect } =
+    useContext(AppContext);
+
+  const [purchaseComplete, setPurchaseComplete] = useState(false);
+  const [totalDetails, setTotalDetails] = useState("");
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    city: "",
+    province: "",
+    postalCode: "",
+    payment: "",
+    eMoneyNum: "",
+    eMoneyPin: "",
+  });
+
+  useEffect(() => {
+    const calcTotalDetails = () => {
+      const purchaseHst = (cartTotal + 25) * 0.13;
+      const purchaseCents = String((purchaseHst % 1).toFixed(2)).substring(2);
+      const totalWithTax = cartTotal + 25 + Math.floor(purchaseHst);
+
+      const formattedPurchaseHst =
+        Math.floor(purchaseHst).toLocaleString("en-US") + "." + purchaseCents;
+
+      const formattedTotalWithTax =
+        totalWithTax.toLocaleString("en-US") + "." + purchaseCents;
+
+      setTotalDetails({
+        formattedPurchaseHst,
+        purchaseCents,
+        formattedTotalWithTax,
+      });
+    };
+
+    calcTotalDetails();
+  }, [cartTotal]);
+
+  const handleShowPurchaseSuccess = () => {
+    setPurchaseComplete(!purchaseComplete);
+  };
+
+  const handlePurchaseComplete = () => {
+    handleShowPurchaseSuccess();
+    handleFormReset();
+    handleItemRemoveAll();
+    handleRedirect("/");
+  };
+
+  const handleFormReset = () => {
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      address: "",
+      city: "",
+      province: "",
+      postalCode: "",
+      payment: "",
+      eMoneyNum: "",
+      eMoneyPin: "",
+    });
+  };
+
+  const handleFormChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((prevValue) => {
+      return {
+        ...prevValue,
+        [name]: value,
+      };
+    });
+  };
 
   return (
     <div id="checkout-page">
@@ -12,10 +89,19 @@ export default function Checkout() {
         <div className="go-back">
           <button onClick={() => goBack()}>Go Back</button>
         </div>
-        <div className="checkout-grid-container">
-          <CheckoutForm />
-          <CheckoutSummary />
-        </div>
+        <CheckoutForm
+          formData={formData}
+          handleFormChange={handleFormChange}
+          totalDetails={totalDetails}
+          handleShowPurchaseSuccess={handleShowPurchaseSuccess}
+        />
+        {purchaseComplete && (
+          <CheckoutSuccess
+            formData={formData}
+            formattedTotalWithTax={totalDetails.formattedTotalWithTax}
+            handlePurchaseComplete={handlePurchaseComplete}
+          />
+        )}
       </div>
     </div>
   );

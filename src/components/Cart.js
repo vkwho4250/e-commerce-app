@@ -2,12 +2,18 @@ import React, { useContext } from "react";
 import CartItem from "./CartItem";
 import { AppContext } from "./App";
 
-export default function Cart({ handleShowCart, handleCheckout }) {
-  const { handleItemRemoveAll, cartItems, cartTotal } = useContext(AppContext);
+export default function Cart({ handleShowCart }) {
+  const { handleItemRemoveAll, cartItems, cartTotal, handleRedirect } =
+    useContext(AppContext);
   const handleCloseCart = (e) => {
     if (e.target.id === "cart") {
       handleShowCart();
     }
+  };
+
+  const goToCheckout = () => {
+    handleShowCart();
+    handleRedirect("/checkout");
   };
 
   return (
@@ -31,10 +37,7 @@ export default function Cart({ handleShowCart, handleCheckout }) {
           <h6>Total</h6>
           <h5>$ {cartTotal.toLocaleString("en-US")}</h5>
         </div>
-        <button
-          className="orange-btn checkout-btn"
-          onClick={() => handleCheckout()}
-        >
+        <button className="orange-btn checkout-btn" onClick={goToCheckout}>
           Checkout
         </button>
       </div>
