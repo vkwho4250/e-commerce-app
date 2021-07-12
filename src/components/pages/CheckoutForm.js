@@ -13,7 +13,7 @@ export default function CheckoutForm({
   };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="checkout-grid-container">
         <div className="checkout-form grid-item">
           <h3>Checkout</h3>
@@ -186,6 +186,7 @@ export default function CheckoutForm({
             </div>
           </div>
         </div>
+
         <CheckoutSummary
           handleSubmit={handleSubmit}
           totalDetails={totalDetails}

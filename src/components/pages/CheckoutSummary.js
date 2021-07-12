@@ -36,7 +36,7 @@ export default function CheckoutSummary({ handleSubmit, totalDetails }) {
         <h6>Total</h6>
         <h5 className="grand-total">$ {totalDetails.formattedTotalWithTax}</h5>
       </div>
-      <button type="submit" className="orange-btn" onSubmit={handleSubmit}>
+      <button type="submit" className="orange-btn">
         Continue & Pay
       </button>
     </div>

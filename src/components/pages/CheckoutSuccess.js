@@ -15,7 +15,7 @@ export default function CheckoutSuccess({
       <div className="success-summary">
         <h4>Thank you for your order!</h4>
         <h6>Your Details</h6>
-        <ul className="purchased-items">
+        <ul className="your-details">
           {formProperties.map((property, index) => {
             if (
               (property === "eMoneyNum" || property === "eMoneyPin") &&

@@ -5,6 +5,7 @@ import { AppContext } from "./App";
 export default function Cart({ handleShowCart }) {
   const { handleItemRemoveAll, cartItems, cartTotal, handleRedirect } =
     useContext(AppContext);
+
   const handleCloseCart = (e) => {
     if (e.target.id === "cart") {
       handleShowCart();
@@ -12,6 +13,7 @@ export default function Cart({ handleShowCart }) {
   };
 
   const goToCheckout = () => {
+    console.log("chekcout");
     handleShowCart();
     handleRedirect("/checkout");
   };
@@ -37,9 +39,11 @@ export default function Cart({ handleShowCart }) {
           <h6>Total</h6>
           <h5>$ {cartTotal.toLocaleString("en-US")}</h5>
         </div>
-        <button className="orange-btn checkout-btn" onClick={goToCheckout}>
-          Checkout
-        </button>
+        {cartItems.length > 0 && (
+          <button className="orange-btn checkout-btn" onClick={goToCheckout}>
+            Checkout
+          </button>
+        )}
       </div>
     </div>
   );

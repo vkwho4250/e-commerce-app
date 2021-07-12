@@ -15,6 +15,8 @@ import { v4 as uuidv4 } from "uuid";
 import Cart from "./Cart";
 import productsData from "../data.json";
 
+const LOCAL_STORAGE_KEY = "reactEcommerceAudiophile.cartItems";
+
 export const AppContext = React.createContext();
 
 function App() {
@@ -24,6 +26,50 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
+    const handleDeviceLayout = () => {
+      console.log("handling resize");
+      console.log(window.innerWidth);
+
+      if (window.innerWidth > 767) {
+        setDeviceLayout("desktop");
+        console.log("desktop");
+      } else if (window.innerWidth > 374) {
+        setDeviceLayout("tablet");
+        console.log("tablet");
+      } else {
+        setDeviceLayout("mobile");
+        console.log("mobile");
+      }
+    };
+
+    // initial render
+    handleDeviceLayout();
+
+    // all other resizing events
+    window.addEventListener("resize", handleDeviceLayout);
+
+    return () => {
+      window.removeEventListener("resize", handleDeviceLayout);
+    };
+  }, []);
+
+  // Load cart items on initial render
+  useEffect(() => {
+    const cartItemsJSON = localStorage.getItem(LOCAL_STORAGE_KEY);
+
+    if (cartItemsJSON !== null) {
+      setCartItems(JSON.parse(cartItemsJSON));
+    }
+  }, []);
+
+  // For changes in cart items:
+  useEffect(() => {
+    // 1. save/update cart items in local storage
+    const saveToLocalStorage = () => {
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(cartItems));
+    };
+
+    // 2. re-calculate cart total
     const calcCartTotal = () => {
       let total = 0;
 
@@ -37,6 +83,7 @@ function App() {
       setCartTotal(total);
     };
 
+    saveToLocalStorage();
     calcCartTotal();
   }, [cartItems]);
 
@@ -52,7 +99,7 @@ function App() {
     const existingItem = cartItems.find((item) => item.productId === productId);
 
     if (existingItem === undefined) {
-      // added item is not within cart: add as new item
+      // added item is not within cart -> add as new item
 
       const newItem = {
         id: uuidv4(),
@@ -61,7 +108,7 @@ function App() {
       };
       setCartItems((prevValue) => [...prevValue, newItem]);
     } else {
-      // added item already exists: edit quantity
+      // added item already exists -> edit quantity
       handleItemEdit(existingItem.id, existingItem.quantity + quantity);
     }
   };
@@ -81,11 +128,6 @@ function App() {
     setCartItems(updatedCartItems);
   };
 
-  // update website layout
-  const handleDeviceLayout = () => {
-    setDeviceLayout("mobile");
-  };
-
   // redirect to any page
   let history = useHistory();
 
@@ -97,7 +139,7 @@ function App() {
 
   const appContextValue = {
     deviceLayout,
-    handleDeviceLayout,
+    // handleDeviceLayout,
     handleRedirect,
     handleItemAdd,
     handleItemDelete,

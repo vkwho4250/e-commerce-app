@@ -24,6 +24,7 @@ export default function Checkout() {
     eMoneyPin: "",
   });
 
+  // Calculate purchase details
   useEffect(() => {
     const calcTotalDetails = () => {
       const purchaseHst = (cartTotal + 25) * 0.13;
@@ -43,7 +44,11 @@ export default function Checkout() {
       });
     };
 
-    calcTotalDetails();
+    if (cartTotal === 0) {
+      handleRedirect("/");
+    } else {
+      calcTotalDetails();
+    }
   }, [cartTotal]);
 
   const handleShowPurchaseSuccess = () => {
@@ -51,10 +56,11 @@ export default function Checkout() {
   };
 
   const handlePurchaseComplete = () => {
+    console.log("completing purchase");
     handleShowPurchaseSuccess();
     handleFormReset();
     handleItemRemoveAll();
-    handleRedirect("/");
+    // handleRedirect("/");
   };
 
   const handleFormReset = () => {
