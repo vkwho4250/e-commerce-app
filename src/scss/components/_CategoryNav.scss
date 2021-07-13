@@ -3,7 +3,6 @@
 .category-nav {
   position: relative;
   @include flex-container(center, center);
-  padding: 100rem 0;
 }
 
 .categories-container {

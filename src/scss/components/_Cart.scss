@@ -8,7 +8,7 @@
   position: absolute;
   top: 15vh;
   right: 10vw;
-  width: 500rem;
+  width: 450rem;
   max-height: 80vh;
   border-radius: $rounded-borders;
   padding: 30rem;
@@ -42,5 +42,13 @@
   h5,
   h6 {
     margin: 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .cart-summary {
+    width: 90%;
+    right: 50%;
+    transform: translateX(50%);
   }
 }

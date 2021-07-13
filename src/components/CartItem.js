@@ -39,7 +39,7 @@ export default function CartItem({ cartItem, location = "cart-window" }) {
           itemCount={cartItem.quantity}
         />
       ) : (
-        <p className="gray-format">x{cartItem.quantity}</p>
+        <p className="quantity gray-format">x{cartItem.quantity}</p>
       )}
     </div>
   );

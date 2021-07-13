@@ -1,7 +1,7 @@
 @use "../styles" as *;
 
 .form-section-grid {
-  @include even-grid-container(400rem);
+  @include even-grid-container(275rem);
   row-gap: 20rem;
   width: 100%;
   margin-bottom: 70rem;
@@ -51,6 +51,20 @@
   }
 }
 
-.no-display {
-  display: none;
+@media only screen and (max-width: 1250px) {
+  .form-section-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300rem, 1fr));
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .address-input-container {
+    grid-column: initial;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .form-section-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200rem, 1fr));
+  }
 }

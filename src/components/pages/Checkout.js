@@ -1,8 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
 import { AppContext } from "../App";
 
-import CheckoutForm from "./CheckoutForm";
-import CheckoutSuccess from "./CheckoutSuccess";
+import CheckoutForm from "../CheckoutForm";
+import CheckoutSuccess from "../CheckoutSuccess";
 
 export default function Checkout() {
   const { goBack, cartTotal, handleItemRemoveAll, handleRedirect } =
@@ -52,15 +52,21 @@ export default function Checkout() {
   }, [cartTotal]);
 
   const handleShowPurchaseSuccess = () => {
+    if (formData.payment !== "eMoney") {
+      setFormData((prevValue) => {
+        return { ...prevValue, eMoneyNum: "N/A", eMoneyPin: "N/A" };
+      });
+    }
+
     setPurchaseComplete(!purchaseComplete);
   };
 
   const handlePurchaseComplete = () => {
     console.log("completing purchase");
+
     handleShowPurchaseSuccess();
     handleFormReset();
     handleItemRemoveAll();
-    // handleRedirect("/");
   };
 
   const handleFormReset = () => {

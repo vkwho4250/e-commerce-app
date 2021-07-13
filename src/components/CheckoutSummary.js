@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { AppContext } from "../App";
+import { AppContext } from "./App";
 
-import CartItem from "../CartItem";
+import CartItem from "./CartItem";
 
-export default function CheckoutSummary({ handleSubmit, totalDetails }) {
+export default function CheckoutSummary({ totalDetails }) {
   const { cartItems, cartTotal } = useContext(AppContext);
 
   return (

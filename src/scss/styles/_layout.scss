@@ -25,3 +25,9 @@ section {
   height: 100vh;
   background: rgba($dark-gray, 0.5);
 }
+
+@media only screen and (max-width: 768px) {
+  section {
+    padding: 30rem 0;
+  }
+}

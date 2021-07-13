@@ -9,6 +9,7 @@ export default function CheckoutForm({
 }) {
   const handleSubmit = (e) => {
     e.preventDefault();
+
     handleShowPurchaseSuccess();
   };
 
@@ -150,9 +151,7 @@ export default function CheckoutForm({
                 </label>
               </div>
               {formData.payment === "eMoney" && (
-                <div
-                  className={formData.payment !== "eMoney" ? "no-display" : ""}
-                >
+                <div>
                   <label htmlFor="input-money-number">e-Money Number</label>
                   <input
                     type="text"
@@ -167,9 +166,7 @@ export default function CheckoutForm({
                 </div>
               )}
               {formData.payment === "eMoney" && (
-                <div
-                  className={formData.payment !== "eMoney" ? "no-display" : ""}
-                >
+                <div>
                   <label htmlFor="input-money-pin">e-Money PIN</label>
                   <input
                     type="text"

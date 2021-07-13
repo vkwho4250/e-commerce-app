@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import CartItem from "../CartItem";
-import { AppContext } from "../App";
+import CartItem from "./CartItem";
+import { AppContext } from "./App";
 
 export default function CheckoutSuccess({
   formData,
@@ -17,23 +17,17 @@ export default function CheckoutSuccess({
         <h6>Your Details</h6>
         <ul className="your-details">
           {formProperties.map((property, index) => {
-            if (
-              (property === "eMoneyNum" || property === "eMoneyPin") &&
-              formData[property] !== "eMoney"
-            ) {
-            } else {
-              return (
-                <li key={index}>
-                  <span className="summary-property">{property}:</span>{" "}
-                  {formData[property]}
-                </li>
-              );
-            }
+            return (
+              <li key={index}>
+                <span className="summary-property">{property}:</span>{" "}
+                {formData[property]}
+              </li>
+            );
           })}
         </ul>
         <h6>Purchase Summary</h6>
         <div className="success-purchase-summary">
-          <div>
+          <div className="success-purchase-items">
             {cartItems.map((cartItem, index) => {
               return (
                 <CartItem

@@ -3,9 +3,3 @@
 .purchase-btns {
   @include flex-container(flex-start, center);
 }
-
-@media only screen and (max-width: 800px) {
-  .purchase-btns {
-    justify-content: center;
-  }
-}
