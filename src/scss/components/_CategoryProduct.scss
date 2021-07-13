@@ -5,9 +5,9 @@
   width: 100%;
   height: auto;
   position: relative;
-  @include even-grid-container(300rem);
+  @include even-grid-container(286rem);
   justify-items: flex-start;
-  column-gap: 100rem;
+  column-gap: 5vw;
   margin: 100rem 0;
 
   .overline {
@@ -17,10 +17,26 @@
 
 .product-text-container {
   order: 1;
-  width: 80%;
+  width: 100%;
 }
 
 .product-image {
   width: 100%;
   border-radius: $rounded-borders;
+  order: 1;
+}
+
+.flip-order {
+  order: 2;
+}
+
+@media only screen and (max-width: 768px) {
+  .product-text-container {
+    text-align: center;
+    margin: auto;
+  }
+
+  .flip-order {
+    order: 1;
+  }
 }

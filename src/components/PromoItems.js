@@ -27,7 +27,7 @@ export default function PromoItems() {
               className="pattern-circles"
               alt="circle patterns"
             />
-            <img src={firstPromo} className="promo-item-1" alt="speaker zx9" />
+            <img src={firstPromo} className="promo-image-1" alt="speaker zx9" />
           </div>
           <div className="first-promo-item-desc">
             <h1>Zx9 Speaker</h1>

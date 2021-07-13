@@ -12,20 +12,16 @@ export default function ProductGallery({ product }) {
 
   return (
     <section className="product-gallery">
-      <div className="gallery-img">
-        <img
-          src={firstImage}
-          className="first-gallery-img"
-          alt={`${product.name} gallery first display`}
-        ></img>
-      </div>
-      <div className="gallery-img">
-        <img
-          src={secondImage}
-          className="second-gallery-img gallery-img"
-          alt={`${product.name} gallery second display`}
-        ></img>
-      </div>
+      <img
+        src={firstImage}
+        className="first-gallery-img"
+        alt={`${product.name} gallery first display`}
+      ></img>
+      <img
+        src={secondImage}
+        className="second-gallery-img gallery-img"
+        alt={`${product.name} gallery second display`}
+      ></img>
       <img
         src={thirdImage}
         className="third-gallery-img gallery-img"

@@ -6,7 +6,7 @@ header {
 .home-banner-img {
   position: relative;
   z-index: -1;
-  min-width: 100vw;
+  width: 100%;
 }
 
 .home-description {
@@ -15,14 +15,13 @@ header {
   top: 30%;
   width: 400rem;
   color: white;
+}
 
-  // h1,
-  // h2,
-  // p {
-  //   margin: 30rem 0;
-  // }
-
-  // h1 {
-  //   line-height: 100%;
-  // }
+@media only screen and (max-width: 1250px) {
+  .home-description {
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 }

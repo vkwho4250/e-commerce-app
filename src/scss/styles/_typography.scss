@@ -61,3 +61,13 @@ p {
   @extend %bold-caps;
   font-size: 13rem;
 }
+
+@media only screen and (max-width: 930px) {
+  h2 {
+    font-size: 28rem;
+  }
+
+  h4 {
+    font-size: 20rem;
+  }
+}

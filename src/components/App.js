@@ -30,10 +30,10 @@ function App() {
       console.log("handling resize");
       console.log(window.innerWidth);
 
-      if (window.innerWidth > 767) {
+      if (window.innerWidth > 1250) {
         setDeviceLayout("desktop");
         console.log("desktop");
-      } else if (window.innerWidth > 374) {
+      } else if (window.innerWidth > 375) {
         setDeviceLayout("tablet");
         console.log("tablet");
       } else {

@@ -1,5 +1,7 @@
 @use "../styles" as *;
 
+$promo-item-height: 380rem;
+
 .promo-items {
   border: 1rem solid red;
 }
@@ -28,10 +30,9 @@
     width: 50%;
     height: 100%;
     text-align: center;
-    border: 1rem solid red;
   }
 
-  .promo-item-1 {
+  .promo-image-1 {
     position: relative;
     top: 22%;
     height: 80%;
@@ -41,23 +42,22 @@
     position: absolute;
     left: -7%;
   }
+}
 
-  .first-promo-item-desc {
-    position: absolute;
-    top: 22%;
-    right: 0;
+.first-promo-item-desc {
+  position: absolute;
+  top: 22%;
+  right: 0;
+  width: 50%;
+
+  h1 {
+    color: white;
+  }
+
+  p {
     width: 50%;
-    display: inline-block;
-
-    h1 {
-      color: white;
-    }
-
-    p {
-      width: 50%;
-      color: white;
-      margin-bottom: 80rem;
-    }
+    color: white;
+    margin-bottom: 80rem;
   }
 }
 
@@ -76,7 +76,7 @@
 
 .sub-promo {
   @include flex-container(flex-start, center);
-  height: 380rem;
+  height: $promo-item-height;
   overflow: hidden;
 }
 
@@ -89,4 +89,50 @@
 .sub-promo-item-desc {
   padding-left: 100rem;
   position: absolute;
+}
+
+@media only screen and (max-width: 1250px) {
+  .promo-items-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .first-promo-item {
+    height: fit-content;
+    padding-bottom: 100rem;
+
+    .first-promo-item-desc {
+      position: initial;
+      text-align: center;
+      margin: auto;
+
+      p {
+        width: 100%;
+      }
+    }
+
+    .image-container {
+      @include flex-container(center, center);
+      height: 300rem;
+      margin-bottom: 100rem;
+      width: 100%;
+
+      .promo-image-1 {
+        position: absolute;
+      }
+
+      .pattern-circles {
+        left: initial;
+      }
+    }
+  }
+
+  .sub-promo {
+    justify-content: center;
+  }
+
+  .sub-promo-item-desc {
+    padding-left: 0;
+    text-align: center;
+  }
 }

@@ -12,8 +12,7 @@ export default function CategoryProduct({ product, index = "", page }) {
       <img
         src={productImage}
         alt={product.name}
-        className="product-image"
-        style={index % 2 === 0 ? { order: 1 } : { order: 2 }}
+        className={`product-image ${index % 2 === 0 ? "" : "flip-order"}`}
       ></img>
       <div className="product-text-container">
         {product.new && <p className="overline">New Product</p>}

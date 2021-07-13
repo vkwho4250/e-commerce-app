@@ -2,10 +2,12 @@
 
 .about {
   border: 1rem solid red;
+  width: 100%;
 }
 
 .about-grid-container {
   @include even-grid-container(300rem);
+  width: 100%;
 }
 
 .about-text-container {
@@ -17,6 +19,17 @@
 }
 
 .about-image {
-  max-width: 100%;
   border-radius: $rounded-borders;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1250px) {
+  .about-text-container {
+    order: 2;
+    text-align: center;
+  }
+
+  .about-grid-container {
+    grid-template-columns: 1fr;
+  }
 }
