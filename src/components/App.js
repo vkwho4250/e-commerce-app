@@ -24,6 +24,7 @@ function App() {
   const [showCart, setShowCart] = useState(false);
   const [cartTotal, setCartTotal] = useState(0);
   const [cartItems, setCartItems] = useState([]);
+  const [showDropMenu, setShowDropMenu] = useState(false);
 
   useEffect(() => {
     const handleDeviceLayout = () => {
@@ -32,6 +33,7 @@ function App() {
 
       if (window.innerWidth > 1250) {
         setDeviceLayout("desktop");
+        setShowDropMenu(false);
         console.log("desktop");
       } else if (window.innerWidth > 375) {
         setDeviceLayout("tablet");
@@ -87,6 +89,14 @@ function App() {
     calcCartTotal();
   }, [cartItems]);
 
+  const handleDropMenu = (e) => {
+    console.log(e.target.className);
+    console.log(e.currentTarget.className);
+    if (e.target.className !== "category-nav") {
+      setShowDropMenu(!showDropMenu);
+    }
+  };
+
   const handleShowCart = () => {
     setShowCart(!showCart);
   };
@@ -139,7 +149,8 @@ function App() {
 
   const appContextValue = {
     deviceLayout,
-    // handleDeviceLayout,
+    showDropMenu,
+    handleDropMenu,
     handleRedirect,
     handleItemAdd,
     handleItemDelete,

@@ -1,12 +1,7 @@
 @use "../styles" as *;
 
 #cart {
-  position: fixed;
-  z-index: 99;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba($dark-gray, 0.5);
+  @extend %fade-block;
 }
 
 .cart-summary {

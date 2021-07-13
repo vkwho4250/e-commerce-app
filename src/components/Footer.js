@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ReactComponent as Logo } from "../assets/shared/desktop/logo.svg";
+import Logo from "./Logo";
 
 import { ReactComponent as Facebook } from "../assets/shared/desktop/icon-facebook.svg";
 import { ReactComponent as Twitter } from "../assets/shared/desktop/icon-twitter.svg";
@@ -11,8 +11,8 @@ export default function Footer() {
     <footer>
       <div className="page-content">
         <div className="nav-container">
-          <Logo className="svg-icons" />
-          <div>
+          <Logo />
+          <div className="nav-links">
             <Link to="/">Home</Link>
             <Link to="/category/headphones">Headphones</Link>
             <Link to="/category/speakers">Speakers</Link>
@@ -35,15 +35,15 @@ export default function Footer() {
           </p>
         </div>
         <div className="socials">
-          <a href="#">
+          <Link to="#">
             <Facebook className="socials-icon" />
-          </a>
-          <a href="#">
+          </Link>
+          <Link to="#">
             <Twitter className="socials-icon" />
-          </a>
-          <a href="#">
+          </Link>
+          <Link to="#">
             <Instagram className="socials-icon" />
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

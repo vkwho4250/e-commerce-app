@@ -1,24 +1,48 @@
 @use "../styles" as *;
 
 #nav-bar {
-  position: fixed;
+  position: sticky;
+  top: 0;
   z-index: 99;
-  padding: 0 10vw;
   width: 100vw;
-  background: $dark-gray;
 
-  .svg-icons {
-    width: 30%;
-    text-align: right;
+  .nav-container {
+    padding: 0 10vw;
   }
 }
 
 .nav-container {
   @include flex-container(space-between, center);
-  height: 10vh;
+  background: $dark-gray;
+
+  min-height: 10vh;
   border-bottom: 1rem solid rgba($light-gray, 0.5);
 }
 
-.cart-btn {
+.nav-logo {
+  @include flex-container(space-between, center);
+  column-gap: $global-col-gap;
+}
+
+.cart-btn,
+.logo {
   cursor: pointer;
+}
+
+.drop-menu {
+  @extend %fade-block;
+  top: 10vh;
+
+  .category-nav {
+    padding: 50rem 10vw;
+    background: white;
+    border-radius: 0 0 $rounded-borders $rounded-borders;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  #nav-bar {
+    .nav-links {
+    }
+  }
 }

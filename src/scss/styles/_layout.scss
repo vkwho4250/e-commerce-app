@@ -16,3 +16,12 @@ section {
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+%fade-block {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba($dark-gray, 0.5);
+}

@@ -7,7 +7,12 @@
 // === Components ===
 
 // = Layout ==
+
+// NavBar
 @forward "./NavBar";
+@forward "./MenuBtn";
+
+// Footer
 @forward "./Footer";
 
 @forward "./CategoryNav";

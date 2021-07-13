@@ -13,7 +13,6 @@ export default function Cart({ handleShowCart }) {
   };
 
   const goToCheckout = () => {
-    console.log("chekcout");
     handleShowCart();
     handleRedirect("/checkout");
   };
