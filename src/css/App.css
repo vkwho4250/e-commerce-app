@@ -215,7 +215,7 @@ section {
   }
 }
 #nav-bar {
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 99;
   width: 100vw;
@@ -733,6 +733,9 @@ header {
     text-align: center;
   }
 }
+#category-page {
+  padding-top: 10vh;
+}
 #category-page header {
   background: #101010;
   height: 336rem;
@@ -786,7 +789,7 @@ header {
   }
 }
 #product-page {
-  padding-top: 5vh;
+  padding-top: 15vh;
 }
 
 .go-back button {
