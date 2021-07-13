@@ -9,7 +9,6 @@ export default function CheckoutForm({
 }) {
   const handleSubmit = (e) => {
     e.preventDefault();
-
     handleShowPurchaseSuccess();
   };
 

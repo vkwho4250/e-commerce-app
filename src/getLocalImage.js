@@ -1,4 +1,4 @@
-/*To retrieve dynamic layout image paths in src folder
+/*To retrieve image paths in src folder for:
 - desktop
 - tablet
 - mobile

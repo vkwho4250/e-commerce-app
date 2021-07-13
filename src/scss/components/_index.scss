@@ -1,41 +1,44 @@
-// Pages
-@forward "./pages/Home";
-@forward "./pages/Category";
-@forward "./pages/Product";
-@forward "./pages/Checkout";
+// == Shared Components ==
 
-// === Components ===
-
-// = Layout ==
-
-// NavBar
+// = NavBar
 @forward "./NavBar";
 @forward "./MenuBtn";
 
-// Footer
-@forward "./Footer";
+// = Cart
+@forward "./Cart";
+@forward "./CartItem";
 
+// = Category Navigation
 @forward "./CategoryNav";
 @forward "./CategoryNavBtn";
-@forward "./PromoItems";
+
+// = About
 @forward "./About";
 
+// = Footer
+@forward "./Footer";
+
+// == Pages ==
+
+// = Home Page
+@forward "./pages/Home";
+@forward "./PromoItems";
+
+// = Category Page
+@forward "./pages/Category";
 @forward "./CategoryProduct";
 
 // = Product Page
-
+@forward "./pages/Product";
 @forward "./ProductPurchase";
-@forward "./Counter";
 @forward "./ProductFeatures";
 @forward "./ProductGallery.scss";
 @forward "./ProductRecs";
 @forward "./ProductEachRec";
+@forward "./Counter";
 
-// == Cart
-@forward "./Cart";
-@forward "./CartItem";
-
-// == Checkout
+// = Checkout Page
+@forward "./pages/Checkout";
 @forward "./CheckoutForm";
 @forward "./CheckoutSummary";
 @forward "./CheckoutSuccess";

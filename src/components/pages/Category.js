@@ -1,7 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import CategoryNav from "../CategoryNav";
+
 import About from "../About";
+import CategoryNav from "../CategoryNav";
 import CategoryProduct from "../CategoryProduct";
 import productsData from "../../data.json";
 

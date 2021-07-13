@@ -4,7 +4,6 @@ import { AppContext } from "./App";
 
 export default function ProductPurchase({ product }) {
   const [itemCount, setItemCount] = useState(1);
-
   const { handleItemAdd } = useContext(AppContext);
 
   const handleCounterClick = (amount) => {

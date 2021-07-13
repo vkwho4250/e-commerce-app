@@ -2,18 +2,20 @@ import "../css/App.css";
 
 import React, { useEffect, useState } from "react";
 import { Switch, Route, useHistory } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 import ScrollToTop from "../ScrollToTop";
+import productsData from "../data.json";
 
+// Shared Components
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import Cart from "./Cart";
+
+// Pages
 import Category from "./pages/Category";
 import Product from "./pages/Product";
 import Home from "./pages/Home";
 import Checkout from "./pages/Checkout";
-
-import { v4 as uuidv4 } from "uuid";
-import Cart from "./Cart";
-import productsData from "../data.json";
 
 const LOCAL_STORAGE_KEY = "reactEcommerceAudiophile.cartItems";
 
@@ -26,21 +28,17 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
   const [showDropMenu, setShowDropMenu] = useState(false);
 
+  // == Display ===
+
   useEffect(() => {
     const handleDeviceLayout = () => {
-      console.log("handling resize");
-      console.log(window.innerWidth);
-
       if (window.innerWidth > 1250) {
         setDeviceLayout("desktop");
         setShowDropMenu(false);
-        console.log("desktop");
       } else if (window.innerWidth > 375) {
         setDeviceLayout("tablet");
-        console.log("tablet");
       } else {
         setDeviceLayout("mobile");
-        console.log("mobile");
       }
     };
 
@@ -54,6 +52,20 @@ function App() {
       window.removeEventListener("resize", handleDeviceLayout);
     };
   }, []);
+
+  const handleDropMenu = (e) => {
+    console.log(e.target.className);
+    console.log(e.currentTarget.className);
+    if (e.target.className !== "category-nav") {
+      setShowDropMenu(!showDropMenu);
+    }
+  };
+
+  const handleShowCart = () => {
+    setShowCart(!showCart);
+  };
+
+  // == Cart Items ===
 
   // Load cart items on initial render
   useEffect(() => {
@@ -88,18 +100,6 @@ function App() {
     saveToLocalStorage();
     calcCartTotal();
   }, [cartItems]);
-
-  const handleDropMenu = (e) => {
-    console.log(e.target.className);
-    console.log(e.currentTarget.className);
-    if (e.target.className !== "category-nav") {
-      setShowDropMenu(!showDropMenu);
-    }
-  };
-
-  const handleShowCart = () => {
-    setShowCart(!showCart);
-  };
 
   const handleItemRemoveAll = () => {
     setCartItems([]);
@@ -138,7 +138,8 @@ function App() {
     setCartItems(updatedCartItems);
   };
 
-  // redirect to any page
+  // == Redirect ==
+
   let history = useHistory();
 
   const handleRedirect = (destination) => {
@@ -147,6 +148,7 @@ function App() {
 
   const goBack = () => history.goBack();
 
+  // == Shared states & actions ==
   const appContextValue = {
     deviceLayout,
     showDropMenu,

@@ -51,19 +51,18 @@ export default function Checkout() {
     }
   }, [cartTotal]);
 
+  // after form submission
   const handleShowPurchaseSuccess = () => {
     if (formData.payment !== "eMoney") {
       setFormData((prevValue) => {
         return { ...prevValue, eMoneyNum: "N/A", eMoneyPin: "N/A" };
       });
     }
-
     setPurchaseComplete(!purchaseComplete);
   };
 
+  //after purchase review
   const handlePurchaseComplete = () => {
-    console.log("completing purchase");
-
     handleShowPurchaseSuccess();
     handleFormReset();
     handleItemRemoveAll();
@@ -84,6 +83,7 @@ export default function Checkout() {
     });
   };
 
+  // updates form data per input
   const handleFormChange = (e) => {
     const { name, value } = e.target;
 

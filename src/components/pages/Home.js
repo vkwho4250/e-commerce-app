@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
+import { AppContext } from "../App";
+import getLocalImage from "../../getLocalImage";
+
 import ProductsNav from "../CategoryNav";
 import PromoItems from "../PromoItems";
 import About from "../About";
-
-import getLocalImage from "../../getLocalImage";
-import { AppContext } from "../App";
 
 export default function Home() {
   const { deviceLayout, handleRedirect } = useContext(AppContext);

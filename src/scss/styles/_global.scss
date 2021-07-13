@@ -8,13 +8,14 @@
 
 html {
   font-size: 6.25%;
+  overflow-x: hidden;
+  @extend %hide-scrollbar;
 }
 
 body {
   font: 15rem "Manrope", sans-serif;
   font-weight: 200;
   overflow-x: hidden;
-  @extend %hide-scrollbar;
 }
 
 // == Links
@@ -35,7 +36,6 @@ a {
 
 // == Scroll
 
-/* Hide scrollbar for IE, Edge and Firefox */
 %hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -121,7 +121,7 @@ button {
   }
 }
 
-// == Lists ==
+// == Lists
 
 li {
   list-style: none;
