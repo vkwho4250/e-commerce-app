@@ -29,9 +29,12 @@ export default function Footer() {
           </p>
           <p className="disclaimer">
             Challenge By{" "}
-            <a href="https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx">
+            <Link
+              to="https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx"
+              target="_blank"
+            >
               Frontend Mentor
-            </a>
+            </Link>
             . Coded by Victoria Ho
           </p>
         </div>
