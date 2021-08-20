@@ -1,4 +1,4 @@
-@use "../styles" as *;
+@use "../../../styles" as *;
 
 .product-features {
   @include even-grid-container(325rem);

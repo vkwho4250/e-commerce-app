@@ -5,7 +5,7 @@
 */
 
 const getLocalImage = (path) => {
-  const img = require(`./assets/${path}`).default;
+  const img = require(`../assets/${path}`).default;
   return img;
 };
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Logo from "./Logo";
+import Logo from "../Navbar/Logo";
 
 import { ReactComponent as Facebook } from "../../../assets/shared/desktop/icon-facebook.svg";
 import { ReactComponent as Twitter } from "../../../assets/shared/desktop/icon-twitter.svg";

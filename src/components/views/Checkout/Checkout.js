@@ -49,7 +49,7 @@ export default function Checkout() {
     } else {
       calcTotalDetails();
     }
-  }, [cartTotal]);
+  }, [cartTotal,handleRedirect]);
 
   // after form submission
   const handleShowPurchaseSuccess = () => {

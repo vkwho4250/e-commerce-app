@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { AppContext } from "./App";
+import { AppContext } from "../../App";
 import getLocalImage from "../../../utilities/getLocalImage";
 
 import patternCircles from "../../../assets/home/desktop/pattern-circles.svg";

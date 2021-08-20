@@ -1,4 +1,4 @@
-@use "../styles" as *;
+@use "../../../styles" as *;
 
 .cart-item {
   @include flex-container(flex-start, center);

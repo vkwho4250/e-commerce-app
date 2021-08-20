@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Counter from "./Counter";
 import getLocalImage from "../../../utilities/getLocalImage";
 import productsData from "../../../data/productData.json";
-import { AppContext } from "./App";
+import { AppContext } from "../../App";
 
 export default function CartItem({ cartItem, location = "cart-window" }) {
   const { handleItemDelete, handleItemEdit } = useContext(AppContext);

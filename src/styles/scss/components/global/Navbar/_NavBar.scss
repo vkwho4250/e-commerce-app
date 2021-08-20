@@ -1,4 +1,4 @@
-@use "../styles" as *;
+@use "../../../styles" as *;
 
 #nav-bar {
   position: fixed;
@@ -15,7 +15,8 @@
   @include flex-container(space-between, center);
   background: $dark-gray;
 
-  min-height: 10vh;
+  height: 10vh;
+  min-height: 60rem;
   border-bottom: 1rem solid rgba($light-gray, 0.5);
 }
 

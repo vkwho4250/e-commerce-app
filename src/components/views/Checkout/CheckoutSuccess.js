@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { AppContext } from "./App";
+import { AppContext } from "../../App";
 
-import CartItem from "./CartItem";
+import CartItem from "../../global/Cart/CartItem";
 
 export default function CheckoutSuccess({
   formData,

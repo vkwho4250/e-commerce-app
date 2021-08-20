@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import RightArrowIcon from "../../../assets/shared/desktop/icon-arrow-right.svg";
 
-import { AppContext } from "./App";
+import { AppContext } from "../../App";
 
 export default function CategoryNavBtn({ category }) {
   const { handleRedirect } = useContext(AppContext);

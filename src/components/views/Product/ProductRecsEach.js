@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { AppContext } from "./App";
-import getLocalImage from "../getLocalImage";
+import { AppContext } from "../../App";
+import getLocalImage from "../../../utilities/getLocalImage";
 
 export default function ProductEachRec({ rec }) {
   const { deviceLayout, handleRedirect } = useContext(AppContext);

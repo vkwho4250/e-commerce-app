@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
-import Counter from "./Counter";
-import { AppContext } from "./App";
+import Counter from "../../global/Cart/Counter";
+import { AppContext } from "../../App";
 
 export default function ProductPurchase({ product }) {
   const [itemCount, setItemCount] = useState(1);
