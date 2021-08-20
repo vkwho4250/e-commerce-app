@@ -395,6 +395,7 @@ section {
 }
 
 .category-nav-btns {
+  background: rgba(255, 255, 255, 0);
   width: 100%;
   height: 350rem;
   position: relative;
@@ -536,9 +537,7 @@ footer p {
   top: 0;
   z-index: 99;
   width: 100vw;
-}
-#nav-bar .nav-container {
-  padding: 0 10vw;
+  background: #101010;
 }
 
 .nav-container {
@@ -546,7 +545,8 @@ footer p {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  background: #101010;
+  margin: auto;
+  width: 80vw;
   height: 10vh;
   min-height: 60rem;
   border-bottom: 1rem solid rgba(250, 250, 250, 0.5);
@@ -581,6 +581,11 @@ footer p {
 }
 
 @media only screen and (max-width: 375px) {
+  .nav-container {
+    width: 100vw;
+    padding: 0 5vw;
+  }
+
   .drop-menu .category-nav {
     padding: 30rem 10vw;
   }
@@ -602,6 +607,10 @@ footer p {
   height: 3rem;
   width: 100%;
   background: white;
+}
+
+#home-page {
+  padding-top: 10vh;
 }
 
 header {

@@ -7,7 +7,7 @@ export default function CategoryNavBtn({ category }) {
   const { handleRedirect } = useContext(AppContext);
 
   return (
-    <div
+    <button
       className="category-nav-btns"
       onClick={() => handleRedirect(`/category/${category.name}`)}
     >
@@ -26,6 +26,6 @@ export default function CategoryNavBtn({ category }) {
           alt="right arrow icon"
         />
       </div>
-    </div>
+    </button>
   );
 }

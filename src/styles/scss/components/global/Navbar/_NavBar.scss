@@ -5,16 +5,13 @@
   top: 0;
   z-index: 99;
   width: 100vw;
-
-  .nav-container {
-    padding: 0 10vw;
-  }
+  background: $dark-gray;
 }
 
 .nav-container {
   @include flex-container(space-between, center);
-  background: $dark-gray;
-
+  margin: auto;
+  width: 80vw;
   height: 10vh;
   min-height: 60rem;
   border-bottom: 1rem solid rgba($light-gray, 0.5);
@@ -49,6 +46,11 @@
 }
 
 @media only screen and (max-width: 375px) {
+  .nav-container {
+    width: 100vw;
+    padding: 0 5vw;
+  }
+
   .drop-menu {
     .category-nav {
       padding: 30rem 10vw;

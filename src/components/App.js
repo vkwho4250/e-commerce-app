@@ -23,9 +23,9 @@ export const AppContext = React.createContext();
 
 function App() {
   const [deviceLayout, setDeviceLayout] = useState("desktop");
-  const [showCart, setShowCart] = useState(false);
   const [cartTotal, setCartTotal] = useState(0);
   const [cartItems, setCartItems] = useState([]);
+  const [showCart, setShowCart] = useState(false);
   const [showDropMenu, setShowDropMenu] = useState(false);
 
   // == Display ===
@@ -54,9 +54,8 @@ function App() {
   }, []);
 
   const handleDropMenu = (e) => {
-    console.log(e.target.className);
-    console.log(e.currentTarget.className);
-    if (e.target.className !== "category-nav") {
+    // .category-nav is the container/white space surrounding each button
+    if (e.target.className !== "category-nav") { 
       setShowDropMenu(!showDropMenu);
     }
   };
@@ -101,9 +100,7 @@ function App() {
     calcCartTotal();
   }, [cartItems]);
 
-  const handleItemRemoveAll = () => {
-    setCartItems([]);
-  };
+ 
 
   const handleItemAdd = (productId, quantity) => {
     const existingItem = cartItems.find((item) => item.productId === productId);
@@ -116,16 +113,12 @@ function App() {
         productId,
         quantity,
       };
+
       setCartItems((prevValue) => [...prevValue, newItem]);
     } else {
       // added item already exists -> edit quantity
       handleItemEdit(existingItem.id, existingItem.quantity + quantity);
     }
-  };
-
-  const handleItemDelete = (itemId) => {
-    const updatedCartItems = cartItems.filter((item) => item.id !== itemId);
-    setCartItems(updatedCartItems);
   };
 
   const handleItemEdit = (itemId, newQuantity) => {
@@ -138,14 +131,26 @@ function App() {
     setCartItems(updatedCartItems);
   };
 
+  const handleItemDelete = (itemId) => {
+    const updatedCartItems = cartItems.filter((item) => item.id !== itemId);
+    setCartItems(updatedCartItems);
+  };
+
+  const handleItemRemoveAll = () => {
+    setCartItems([]);
+  };
+
+ 
   // == Redirect ==
 
   let history = useHistory();
 
+  // goes to specified destination
   const handleRedirect = (destination) => {
     history.push(destination);
   };
 
+  // returns to prior destination
   const goBack = () => history.goBack();
 
   // == Shared states & actions ==
