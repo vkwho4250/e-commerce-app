@@ -1,9 +1,9 @@
 import React from "react";
 import CategoryNavBtn from "./CategoryNavBtn";
 
-import headphonesImg from "../assets/shared/desktop/image-headphones.png";
-import earphonesImg from "../assets/shared/desktop/image-earphones.png";
-import speakersImg from "../assets/shared/desktop/image-speakers.png";
+import headphonesImg from "../../../assets/shared/desktop/image-headphones.png"
+import earphonesImg from "../../../assets/shared/desktop/image-earphones.png";
+import speakersImg from "../../../assets/shared/desktop/image-speakers.png";
 
 export default function CategoryNav() {
   const categories = [

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import getLocalImage from "../getLocalImage";
-import { AppContext } from "./App";
-import ProductPurchase from "./ProductPurchase";
+import getLocalImage from "../../../utilities/getLocalImage";
+import { AppContext } from "../../App";
+import ProductPurchase from "../Product/ProductPurchase";
 
 export default function CategoryProduct({ product, index = "", page }) {
   const { deviceLayout, handleRedirect } = useContext(AppContext);

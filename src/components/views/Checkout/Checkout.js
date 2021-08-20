@@ -1,8 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
-import { AppContext } from "../App";
+import { AppContext } from "../../App";
 
-import CheckoutForm from "../CheckoutForm";
-import CheckoutSuccess from "../CheckoutSuccess";
+import CheckoutForm from "./CheckoutForm";
+import CheckoutSuccess from "./CheckoutSuccess";
 
 export default function Checkout() {
   const { goBack, cartTotal, handleItemRemoveAll, handleRedirect } =

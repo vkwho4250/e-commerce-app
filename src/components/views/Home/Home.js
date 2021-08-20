@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { AppContext } from "../App";
-import getLocalImage from "../../getLocalImage";
+import { AppContext } from "../../App";
+import getLocalImage from "../../../utilities/getLocalImage";
 
-import ProductsNav from "../CategoryNav";
-import PromoItems from "../PromoItems";
-import About from "../About";
+import About from "../../global/About/About";
+import CategoryNav from "../../global/CategoryNav/CategoryNav";
+import PromoItems from "./HomePromoItems";
 
 export default function Home() {
   const { deviceLayout, handleRedirect } = useContext(AppContext);
@@ -34,7 +34,7 @@ export default function Home() {
         </div>
       </header>
       <div className="page-content">
-        <ProductsNav />
+        <CategoryNav />
         <PromoItems />
         <About />
       </div>

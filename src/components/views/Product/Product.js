@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
-import { AppContext } from "../App";
-import productsData from "../../data.json";
+import { AppContext } from "../../App";
+import productsData from "../../../data/productData.json";
 
-import About from "../About";
-import CategoryNav from "../CategoryNav";
-import CategoryProduct from "../CategoryProduct";
-import ProductFeatures from "../ProductFeatures";
-import ProductGallery from "../ProductGallery";
-import ProductRecs from "../ProductRecs";
+import About from "../../global/About/About";
+import CategoryNav from "../../global/CategoryNav/CategoryNav";
+import CategoryProduct from "../Category/CategoryProduct";
+import ProductFeatures from "./ProductFeatures";
+import ProductGallery from "./ProductGallery";
+import ProductRecs from "./ProductRecs";
 
 export default function Product() {
   const { productId } = useParams();

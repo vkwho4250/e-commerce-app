@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { AppContext } from "./App";
-import getLocalImage from "../getLocalImage";
+import getLocalImage from "../../../utilities/getLocalImage";
 
 export default function About() {
   const { deviceLayout } = useContext(AppContext);

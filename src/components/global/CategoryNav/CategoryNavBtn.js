@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import RightArrowIcon from "../assets/shared/desktop/icon-arrow-right.svg";
+import RightArrowIcon from "../../../assets/shared/desktop/icon-arrow-right.svg";
 
 import { AppContext } from "./App";
 

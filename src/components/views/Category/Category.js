@@ -1,10 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-import About from "../About";
-import CategoryNav from "../CategoryNav";
-import CategoryProduct from "../CategoryProduct";
-import productsData from "../../data.json";
+import About from "../../global/About/About";
+import CategoryNav from "../../global/CategoryNav/CategoryNav";
+import productsData from "../../../data/productData.json";
+import CategoryProduct from "./CategoryProduct";
 
 export default function Category() {
   const { categoryName } = useParams();

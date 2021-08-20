@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { AppContext } from "./App";
-import getLocalImage from "../getLocalImage";
+import getLocalImage from "../../../utilities/getLocalImage";
 
-import patternCircles from "../assets/home/desktop/pattern-circles.svg";
+import patternCircles from "../../../assets/home/desktop/pattern-circles.svg";
 
-export default function PromoItems() {
+export default function HomePromoItems() {
   const { deviceLayout, handleRedirect } = useContext(AppContext);
 
   const firstPromo = getLocalImage(

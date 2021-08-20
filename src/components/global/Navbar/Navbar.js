@@ -5,7 +5,7 @@ import { AppContext } from "./App";
 import Logo from "./Logo";
 import MenuBtn from "./MenuBtn";
 import CategoryNav from "./CategoryNav";
-import { ReactComponent as ShoppingCart } from "../assets/shared/desktop/icon-cart.svg";
+import { ReactComponent as ShoppingCart } from "../../../assets/shared/desktop/icon-cart.svg";
 
 export default function Navbar({ handleShowCart }) {
   const { deviceLayout, handleDropMenu, showDropMenu } = useContext(AppContext);

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Counter from "./Counter";
-import getLocalImage from "../getLocalImage";
-import productsData from "../data.json";
+import getLocalImage from "../../../utilities/getLocalImage";
+import productsData from "../../../data/productData.json";
 import { AppContext } from "./App";
 
 export default function CartItem({ cartItem, location = "cart-window" }) {

@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 import Logo from "./Logo";
 
-import { ReactComponent as Facebook } from "../assets/shared/desktop/icon-facebook.svg";
-import { ReactComponent as Twitter } from "../assets/shared/desktop/icon-twitter.svg";
-import { ReactComponent as Instagram } from "../assets/shared/desktop/icon-instagram.svg";
+import { ReactComponent as Facebook } from "../../../assets/shared/desktop/icon-facebook.svg";
+import { ReactComponent as Twitter } from "../../../assets/shared/desktop/icon-twitter.svg";
+import { ReactComponent as Instagram } from "../../../assets/shared/desktop/icon-instagram.svg";
 
 export default function Footer() {
   return (
