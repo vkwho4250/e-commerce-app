@@ -1,0 +1,44 @@
+@use "../../../styles" as *;
+
+#checkout-page {
+  padding: 5vh 0;
+  background: $mid-gray;
+}
+
+.info-header {
+  color: $dark-orange;
+}
+.checkout-grid-container {
+  margin: 50rem 0;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-gap: $global-col-gap;
+
+  .grid-item {
+    background: white;
+    border-radius: $rounded-borders;
+    padding: 50rem;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .checkout-grid-container {
+    display: block;
+
+    .grid-item {
+      margin-bottom: $global-col-gap;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .form-section-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200rem, 1fr));
+  }
+
+  .checkout-grid-container {
+    .grid-item {
+      padding: 30rem;
+    }
+  }
+}

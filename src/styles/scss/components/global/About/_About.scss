@@ -1,0 +1,34 @@
+@use "../../../styles" as *;
+
+.about {
+  width: 100%;
+}
+
+.about-grid-container {
+  @include even-grid-container(300rem);
+  width: 100%;
+}
+
+.about-text-container {
+  width: 70%;
+
+  h3 span {
+    color: $dark-orange;
+  }
+}
+
+.about-image {
+  border-radius: $rounded-borders;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1250px) {
+  .about-text-container {
+    order: 2;
+    text-align: center;
+  }
+
+  .about-grid-container {
+    grid-template-columns: 1fr;
+  }
+}

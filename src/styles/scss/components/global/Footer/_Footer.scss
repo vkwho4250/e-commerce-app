@@ -1,0 +1,90 @@
+@use "../../../styles" as *;
+
+footer {
+  background: $dark-gray;
+  padding: 30rem 0;
+
+  .nav-container {
+    border: none;
+  }
+
+  p {
+    color: white;
+  }
+}
+
+.footer-text {
+  margin-top: 20rem;
+  width: 40%;
+}
+
+.disclaimer {
+  font-size: 13rem;
+  text-transform: uppercase;
+
+  a {
+    padding: 0;
+  }
+}
+
+.socials {
+  position: absolute;
+  top: 60%;
+  right: 0;
+  a {
+    padding: 10rem;
+
+    &:hover {
+      svg.socials-icon path {
+        fill: $dark-orange;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  footer {
+    .nav-container {
+      display: block;
+      margin-top: 2.5vh;
+    }
+
+    .nav-links {
+      margin-top: 20rem;
+
+      a:first-child {
+        padding-left: 0;
+      }
+    }
+  }
+
+  .footer-text {
+    width: 100%;
+  }
+
+  .socials {
+    bottom: 0;
+    top: initial;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  footer {
+    .page-content {
+      text-align: center;
+    }
+  }
+
+  .socials {
+    position: relative;
+  }
+
+  .nav-links {
+    @include flex-container(flex-start, center, column);
+    row-gap: 10rem;
+
+    a {
+      padding: 0;
+    }
+  }
+}

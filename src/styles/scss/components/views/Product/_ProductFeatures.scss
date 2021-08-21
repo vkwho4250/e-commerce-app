@@ -1,0 +1,40 @@
+@use "../../../styles" as *;
+
+.product-features {
+  @include even-grid-container(325rem);
+  align-items: flex-start;
+}
+
+.features {
+  width: 90%;
+}
+
+.in-the-box {
+  width: 100%;
+  padding: 0 10%;
+
+  li {
+    span {
+      color: $dark-orange;
+      font-weight: bold;
+      margin-right: 20rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .in-the-box {
+    @include flex-container(space-between, flex-start);
+    padding-left: 0;
+
+    ul {
+      padding-top: 10rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .in-the-box {
+    display: block;
+  }
+}

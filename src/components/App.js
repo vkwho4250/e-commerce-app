@@ -1,21 +1,21 @@
-import "../css/App.css";
+import "../styles/css/App.css";
 
 import React, { useEffect, useState } from "react";
 import { Switch, Route, useHistory } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-import ScrollToTop from "../ScrollToTop";
-import productsData from "../data.json";
+import ScrollToTop from "../utilities/ScrollToTop";
+import productsData from "../data/productData.json";
 
 // Shared Components
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import Cart from "./Cart";
+import Navbar from "./global/Navbar/Navbar";
+import Footer from "./global/Footer/Footer";
+import Cart from "./global/Cart/Cart";
 
-// Pages
-import Category from "./pages/Category";
-import Product from "./pages/Product";
-import Home from "./pages/Home";
-import Checkout from "./pages/Checkout";
+// Views
+import Category from "./views/Category/Category";
+import Product from "./views/Product/Product";
+import Home from "./views/Home/Home";
+import Checkout from "./views/Checkout/Checkout";
 
 const LOCAL_STORAGE_KEY = "reactEcommerceAudiophile.cartItems";
 
@@ -23,9 +23,9 @@ export const AppContext = React.createContext();
 
 function App() {
   const [deviceLayout, setDeviceLayout] = useState("desktop");
-  const [showCart, setShowCart] = useState(false);
   const [cartTotal, setCartTotal] = useState(0);
   const [cartItems, setCartItems] = useState([]);
+  const [showCart, setShowCart] = useState(false);
   const [showDropMenu, setShowDropMenu] = useState(false);
 
   // == Display ===
@@ -54,6 +54,7 @@ function App() {
   }, []);
 
   const handleDropMenu = (e) => {
+    // .category-nav is the container/white space surrounding each button
     if (e.target.className !== "category-nav") {
       setShowDropMenu(!showDropMenu);
     }
@@ -99,10 +100,6 @@ function App() {
     calcCartTotal();
   }, [cartItems]);
 
-  const handleItemRemoveAll = () => {
-    setCartItems([]);
-  };
-
   const handleItemAdd = (productId, quantity) => {
     const existingItem = cartItems.find((item) => item.productId === productId);
 
@@ -114,16 +111,12 @@ function App() {
         productId,
         quantity,
       };
+
       setCartItems((prevValue) => [...prevValue, newItem]);
     } else {
       // added item already exists -> edit quantity
       handleItemEdit(existingItem.id, existingItem.quantity + quantity);
     }
-  };
-
-  const handleItemDelete = (itemId) => {
-    const updatedCartItems = cartItems.filter((item) => item.id !== itemId);
-    setCartItems(updatedCartItems);
   };
 
   const handleItemEdit = (itemId, newQuantity) => {
@@ -136,14 +129,25 @@ function App() {
     setCartItems(updatedCartItems);
   };
 
+  const handleItemDelete = (itemId) => {
+    const updatedCartItems = cartItems.filter((item) => item.id !== itemId);
+    setCartItems(updatedCartItems);
+  };
+
+  const handleItemRemoveAll = () => {
+    setCartItems([]);
+  };
+
   // == Redirect ==
 
   let history = useHistory();
 
+  // goes to specified destination
   const handleRedirect = (destination) => {
     history.push(destination);
   };
 
+  // returns to prior destination
   const goBack = () => history.goBack();
 
   // == Shared states & actions ==
