@@ -1,0 +1,22 @@
+@use "../../../styles" as *;
+
+#product-page {
+  padding-top: 15vh;
+}
+
+.go-back {
+  button {
+    background: none;
+    text-transform: initial;
+    font-size: 13rem;
+    padding: 0;
+
+    &:hover {
+      color: $dark-orange;
+    }
+  }
+}
+
+.product-information {
+  padding-top: 0;
+}

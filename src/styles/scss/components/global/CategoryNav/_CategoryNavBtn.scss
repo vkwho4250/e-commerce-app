@@ -1,0 +1,60 @@
+@use "../../../styles" as *;
+
+.category-nav-btns {
+  background: rgba(white, 0);
+  width: 100%;
+  height: 350rem;
+  position: relative;
+  @include flex-container(flex-start, center, column);
+  transition: all 0.3s;
+  border-radius: $rounded-borders;
+  cursor: pointer;
+
+  h6,
+  p {
+    margin: 0;
+    color: black;
+  }
+
+  &:hover {
+    transform: translateY(-10rem);
+    box-shadow: 0 20rem 10rem -10rem rgba($dark-gray, 0.2);
+
+    .shop-text p {
+      color: $dark-orange;
+    }
+  }
+}
+
+.right-arrow {
+  padding-left: 15rem;
+}
+
+.gray-block {
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  background: $mid-gray;
+  border-radius: 10rem;
+  width: 100%;
+  height: 75%;
+}
+
+.category-image {
+  height: 70%;
+}
+
+.shop-text {
+  margin: 2% 0;
+  @include flex-container(space-around, center);
+}
+
+@media only screen and (max-width: 768px) {
+  .category-image {
+    height: 60%;
+  }
+
+  .category-nav-btns {
+    height: 250rem;
+  }
+}

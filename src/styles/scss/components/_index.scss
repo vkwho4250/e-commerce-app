@@ -1,0 +1,44 @@
+// == Global Components ==
+
+// = About
+@forward "./global/About/About";
+
+// = Cart
+@forward "./global/Cart/Cart";
+@forward "./global/Cart/CartItem";
+@forward "./global/Cart/Counter";
+
+// = Category Navigation
+@forward "./global/CategoryNav/CategoryNav";
+@forward "./global/CategoryNav/CategoryNavBtn";
+
+// = Footer
+@forward "./global/Footer/Footer";
+
+// = NavBar
+@forward "./global/Navbar/NavBar";
+@forward "./global/Navbar/MenuBtn";
+
+// == Views ==
+
+// = Home Page
+@forward "./views/Home/Home";
+@forward "./views/Home/HomePromoItems";
+
+// = Category Page
+@forward "./views/Category/Category";
+@forward "./views/Category/CategoryProduct";
+
+// = Product Page
+@forward "./views/Product/Product";
+@forward "./views/Product/ProductFeatures";
+@forward "./views/Product/ProductGallery";
+@forward "./views/Product/ProductPurchase";
+@forward "./views/Product/ProductRecs";
+@forward "./views/Product/ProductRecsEach";
+
+// = Checkout Page
+@forward "./views/Checkout/Checkout";
+@forward "./views/Checkout/CheckoutForm";
+@forward "./views/Checkout/CheckoutSuccess";
+@forward "./views/Checkout/CheckoutSummary";

@@ -1,0 +1,21 @@
+@use "../../../styles" as *;
+
+.checkout-summary {
+  height: fit-content;
+
+  h6 {
+    color: darken($mid-gray, 50%);
+  }
+
+  .orange-btn {
+    width: 100%;
+  }
+}
+
+.cart-item-container {
+  margin: 30rem 0;
+}
+
+.grand-total {
+  color: $dark-orange;
+}
