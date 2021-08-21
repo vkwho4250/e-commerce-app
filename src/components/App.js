@@ -54,8 +54,6 @@ function App() {
   }, []);
 
   const handleDropMenu = (e) => {
-    console.log(e.target.className);
-    console.log(e.currentTarget.className);
     if (e.target.className !== "category-nav") {
       setShowDropMenu(!showDropMenu);
     }
