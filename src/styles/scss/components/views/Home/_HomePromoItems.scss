@@ -88,11 +88,6 @@ $promo-item-height: 380rem;
 }
 
 @media only screen and (max-width: 1250px) {
-  .promo-items-grid {
-    display: flex;
-    flex-direction: column;
-  }
-
   .first-promo-item {
     height: fit-content;
     padding-bottom: 100rem;
@@ -134,6 +129,11 @@ $promo-item-height: 380rem;
 }
 
 @media only screen and (max-width: 767px) {
+  .promo-items-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
   .first-promo-item-desc {
     width: 80%;
   }
