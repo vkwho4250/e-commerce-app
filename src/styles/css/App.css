@@ -464,7 +464,9 @@ section {
 .category-nav-btns h6,
 .category-nav-btns p {
   margin: 0;
-  color: black;
+}
+.category-nav-btns p {
+  color: #7f7f7f;
 }
 .category-nav-btns:hover {
   transform: translateY(-10rem);
