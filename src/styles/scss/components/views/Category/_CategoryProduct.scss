@@ -34,3 +34,9 @@
     order: 1;
   }
 }
+
+@media only screen and (max-width: 375px) {
+  .category-product {
+    @include even-grid-container(180rem);
+  }
+}

@@ -1,9 +1,6 @@
-#home-page {
-  padding-top: 10vh;
-}
-
 header {
   position: relative;
+  padding-top: 10vh;
 }
 
 .home-banner-img {
@@ -15,7 +12,7 @@ header {
 .home-description {
   position: absolute;
   left: 10vw;
-  top: 30%;
+  top: 30vh;
   width: 400rem;
   color: white;
 }
@@ -24,7 +21,13 @@ header {
   .home-description {
     text-align: center;
     left: 50%;
-    top: 50%;
+    top: 55%;
     transform: translate(-50%, -50%);
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .home-description {
+    padding: 0 30rem;
   }
 }

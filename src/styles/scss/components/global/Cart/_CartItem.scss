@@ -57,3 +57,22 @@
     }
   }
 }
+
+@media only screen and (max-width: 370px) {
+  .cart-item {
+    @include flex-container(center, center, column);
+    row-gap: 10rem;
+    height: fit-content;
+    text-align: center;
+    border-bottom: 1rem solid rgba($dark-gray, 0.5);
+
+    .quantity,
+    .counter {
+      position: initial;
+    }
+  }
+
+  .cart-item-details {
+    width: 100%;
+  }
+}

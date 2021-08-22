@@ -46,9 +46,11 @@
 }
 
 @media only screen and (max-width: 375px) {
-  .nav-container {
-    width: 100vw;
-    padding: 0 5vw;
+  #nav-bar {
+    .nav-container {
+      width: 100vw;
+      padding: 0 10vw;
+    }
   }
 
   .drop-menu {

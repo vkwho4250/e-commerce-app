@@ -132,3 +132,9 @@ $promo-item-height: 380rem;
     text-align: center;
   }
 }
+
+@media only screen and (max-width: 767px) {
+  .first-promo-item-desc {
+    width: 80%;
+  }
+}
