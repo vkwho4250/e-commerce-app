@@ -72,7 +72,7 @@ function App() {
 
     if (cartItemsJSON !== null) {
       setCartItems(JSON.parse(cartItemsJSON));
-    }
+    } // else, default state value [] will be added to localStorage
   }, []);
 
   // For changes in cart items:
